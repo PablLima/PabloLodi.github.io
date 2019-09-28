@@ -1,2 +1,2 @@
-# 28-08-2019---Calendrier-II--Louer-un-Outil
-Système de location d'outils
+# Página "Meu carrinho"
+Protótipo de página de carrinho para e-commerce utilizando HTML5, CSS3 e JavaScript.
