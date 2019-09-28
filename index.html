@@ -5,23 +5,20 @@
 	<meta charset="utf-8">
 	<title>Rent a Tool</title>
 	<link rel="stylesheet" type="text/css" href="css/rent.css">
-	<link rel="stylesheet" type="text/css" href="css/forms.css">
-	<link rel="stylesheet" type="text/css" href="css/produto_carrinho.css">
 	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet"> <!-- web font Lobster -->
-    <link href="https://fonts.googleapis.com/css?family=Lexend+Giga&display=swap" rel="stylesheet">
-    
 </head>
 <body>
 	<!-- cabeçalho -->
-	<header class="bg">
+	<header>
 		<h1>Rent a Tool</h1>
 		<div id="menu-login">
 			<span id="login">Olá, visitante! (<a href="#">login</a>)</span>
-			<span id="carrinho"><a href="#">Meu carrinho <span id="numItensCarrinho">(2)</span><img src="img/cart.png" width="32" alt="carrinho de compras"></a></span>			
+			<span id="carrinho"><a href="carrinho.html">Meu carrinho <span id="numItensCarrinho">(2)</span><img src="img/cart.png" width="32" alt="carrinho de compras"></a></span>
 		</div>
-		<nav class="menu-opcoes">    
+        <p id="exibe-menu">Menu</p>
+		<nav class="menu-opcoes">
 			<ul>
-				<li><a href="#">Minha Conta</a></li>
+				<li><a href="cad_cliente.html">Minha Conta</a></li>
 				<li><a href="#">Programa de pontos</a></li>
 				<li><a href="#">Consumo solidário</a></li>
 				<li><a href="#">Quem somos</a></li>
@@ -49,11 +46,11 @@
 						<li><a href="#">Jardinagem</a></li>
 						<li><a href="#">Limpeza</a></li>
 						<li><a href="#">Escritório</a></li>
-						<li><a href="#">Mecânica</a></li>						
+						<li><a href="#">Mecânica</a></li>
 					</ul>
 				</nav>
 			</section>
-		</section>	
+		</section>
 
 		<section class="col-2">
 			<h2>Novidades</h2>
@@ -61,148 +58,148 @@
 			<!-- container de produtos -->
 			<div class="lista-produtos">
 				<!-- um produto -->
-                     <div class="produto">   
+                     <div class="produto">
                         <a href="#">
                         <figure>
                             <img src="img/produtos/serra.jpg" alt="Serra Elétrica">
                             <figcaption>Serra Elétrica
                             <br>De <span class="precoInicial">R$ 40,00</span> por <span class="precoFinal">R$ 20,00</span>
-                            </figcaption>                                                                     
-                        </figure>   
+                            </figcaption>
+                        </figure>
                     	</a>
-                        <p class="noCarrinho">no carrinho!</p>                                            
+                        <p class="noCarrinho">no carrinho!</p>
                     </div>
 				<!-- fim produto -->
 
 				<!-- um produto -->
-                     <div class="produto">    
-                     	<a href="#">                  
-                        <figure>                           
+                     <div class="produto">
+                     	<a href="#">
+                        <figure>
                             <img src="img/produtos/escada.jpg" alt="Escada">
                             <figcaption>Escada
                             <br><span class="precoFinal">R$ 20,00</span>
-                            </figcaption>                          
-                        </figure>      
-                        </a>              
+                            </figcaption>
+                        </figure>
+                        </a>
                         <p class="rapida">compra rápida</p>
                     </div>
 				<!-- fim produto -->
 
 				<!-- um produto -->
-                     <div class="produto"> 
-                     <a href="#">                     
-                        <figure>                            
+                     <div class="produto">
+                     <a href="#">
+                        <figure>
                             <img src="img/produtos/serra2.jpg" alt="Serra Elétrica 2">
                             <figcaption>Serra elétrica 2
                             <br><span class="precoFinal">R$ 20,00</span>
-                            </figcaption>                            							
-                        </figure> 
-                        </a>      
-                        <p class="rapida">compra rápida</p>             
+                            </figcaption>
+                        </figure>
+                        </a>
+                        <p class="rapida">compra rápida</p>
                     </div>
 				<!-- fim produto -->
 
 				<!-- um produto -->
-                     <div class="produto"> 
-                     <a href="#">                     
+                     <div class="produto">
+                     <a href="#">
                         <figure>
                             <img src="img/produtos/furadeira.jpg" alt="Furadeira elétrica">
                             <figcaption>Furadeira elétrica
                             <br>De <span class="precoInicial">R$ 40,00</span> por <span class="precoFinal">R$ 20,00</span>
-                            </figcaption>							
-                        </figure>  
-                        </a> 
+                            </figcaption>
+                        </figure>
+                        </a>
                         <p class="rapida">compra rápida</p>
                     </div>
 				<!-- fim produto -->
 
 				<!-- um produto -->
-                     <div class="produto">  
-                     <a href="#">                    
+                     <div class="produto">
+                     <a href="#">
                         <figure>
                             <img src="img/produtos/serra3.jpg" alt="Serra elétrica 3">
                             <figcaption>Serra elétrica 3
                             <br><span class="precoFinal">R$ 20,00</span>
-                            </figcaption>				
+                            </figcaption>
                         </figure>
                     	</a>
-                        <p class="rapida">compra rápida</p>                    
+                        <p class="rapida">compra rápida</p>
                     </div>
 				<!-- fim produto -->
 
 				<!-- um produto -->
-                     <div class="produto">     
-                     <a href="#">                 
+                     <div class="produto">
+                     <a href="#">
                         <figure>
                             <img src="img/produtos/mangueira.jpg" alt="Mangueira">
                             <figcaption>Mangueira
                             <br><span class="precoFinal">R$ 20,00</span>
-                            </figcaption>				
-                        </figure> 
-                        </a>  
-                        <p class="rapida">compra rápida</p>                 
+                            </figcaption>
+                        </figure>
+                        </a>
+                        <p class="rapida">compra rápida</p>
                     </div>
-				<!-- fim produto -->				
+				<!-- fim produto -->
 
 				<!-- um produto -->
                      <div class="produto">
-                     <a href="#">                      
+                     <a href="#">
                         <figure>
                             <img src="img/produtos/cortador.jpg" alt="Cortador de grama">
                             <figcaption>Cortador de grama
                             <br>De <span class="precoInicial">R$ 40,00</span> por <span class="precoFinal">R$ 20,00</span>
                             </figcaption>
-                        </figure>   
+                        </figure>
                     	</a>
-                        <p class="rapida">compra rápida</p>                 
+                        <p class="rapida">compra rápida</p>
                     </div>
 				<!-- fim produto -->
 
 				<!-- um produto -->
                      <div class="produto">
-                     <a href="#">                      
+                     <a href="#">
                         <figure>
                             <img src="img/produtos/kit.jpg" alt="Kit de ferramentas">
                             <figcaption>Kit de ferramentas
                             <br>De <span class="precoInicial">R$ 40,00</span> por <span class="precoFinal">R$ 20,00</span>
-                            </figcaption>							
-                        </figure>   
-                        </a>     
-                        <p class="noCarrinho">no carrinho!</p>            
+                            </figcaption>
+                        </figure>
+                        </a>
+                        <p class="noCarrinho">no carrinho!</p>
                     </div>
-				<!-- fim produto -->				
-				
+				<!-- fim produto -->
+
 				<!-- um produto -->
-                     <div class="produto">  
-                     <a href="#">                    
+                     <div class="produto">
+                     <a href="#">
                         <figure>
                             <img src="img/produtos/lavadora.jpg" alt="Lavadora de alta pressão">
                             <figcaption>Lavadora de alta pressão
                             <br>De <span class="precoInicial">R$ 40,00</span> por <span class="precoFinal">R$ 20,00</span>
-                            </figcaption>						
+                            </figcaption>
                         </figure>
-                        </a>    
-                        <p class="rapida">compra rápida</p>                
+                        </a>
+                        <p class="rapida">compra rápida</p>
                     </div>
-				<!-- fim produto -->	
+				<!-- fim produto -->
 
 				<!-- um produto -->
-                     <div class="produto">  
-                     <a href="#">                    
+                     <div class="produto">
+                     <a href="#">
                         <figure>
                             <img src="img/produtos/projetor.jpg" alt="Projetor multimídia">
                             <figcaption>Projetor multimídia
                             <br><span class="precoFinal">R$ 20,00</span>
-                            </figcaption>					
-                        </figure>   
+                            </figcaption>
+                        </figure>
                     	</a>
-                        <p class="rapida">compra rápida</p>                 
+                        <p class="rapida">compra rápida</p>
                     </div>
-				<!-- fim produto -->					
-				
+				<!-- fim produto -->
+
 				<!-- um produto -->
-                     <div class="produto">  
-                     <a href="#">                    
+                     <div class="produto">
+                     <a href="#">
                         <figure>
                             <img src="img/produtos/computador.jpg" alt="Computador">
                             <figcaption>Computador
@@ -210,88 +207,88 @@
                             </figcaption>
                         </figure>
                     	</a>
-                        <p class="rapida">compra rápida</p>                    
+                        <p class="rapida">compra rápida</p>
                     </div>
-				<!-- fim produto -->	
-						
+				<!-- fim produto -->
+
 				<!-- um produto -->
-                     <div class="produto"> 
-                     <a href="#">                     
+                     <div class="produto">
+                     <a href="#">
                         <figure>
                             <img src="img/produtos/default.jpg" alt="Notebook">
                             <figcaption>Notebook
                             <br>De <span class="precoInicial">R$ 40,00</span> por <span class="precoFinal">R$ 20,00</span>
                             </figcaption>
-                        </figure>     
+                        </figure>
                     </a>
                         <p class="rapida">compra rápida</p>
                     </div>
-				<!-- fim produto -->	
+				<!-- fim produto -->
 
 				<!-- um produto -->
-                     <div class="produto">  
-                     <a href="#">                    
+                     <div class="produto">
+                     <a href="#">
                         <figure>
                             <img src="img/produtos/default.jpg" alt="Impressora laser">
                             <figcaption>Impressora laser
                             <br>De <span class="precoInicial">R$ 40,00</span> por <span class="precoFinal">R$ 20,00</span>
                             </figcaption>
-                        </figure>  
+                        </figure>
                     </a>
-                    <p class="rapida">compra rápida</p>                  
+                    <p class="rapida">compra rápida</p>
                     </div>
-				<!-- fim produto -->				
+				<!-- fim produto -->
 
-				<!-- adicione mais produtos --> 
+				<!-- adicione mais produtos -->
 
-			</div>	<!-- fim lista produtos -->		
+			</div>	<!-- fim lista produtos -->
 		</section>
 		<aside class="col-3">
 			<h2>Mais pedidos</h2>
 			<!-- container de mais pedidos -->
 			<div class="lista-produtos">
-			
+
 				<!-- um produto -->
-                     <div class="produto">     
-                     <a href="#">                 
+                     <div class="produto">
+                     <a href="#">
                         <figure>
                             <img src="img/produtos/projetor.jpg" alt="Projetor multimídia">
                             <figcaption>Projetor multimídia
                             <br><span class="precoFinal">R$ 20,00</span>
                             </figcaption>
-                        </figure>        
-                        </a>            
+                        </figure>
+                        </a>
                     </div>
-				<!-- fim produto -->					
-				
+				<!-- fim produto -->
+
 				<!-- um produto -->
-                     <div class="produto"> 
-                     <a href="#">                     
+                     <div class="produto">
+                     <a href="#">
                         <figure>
                             <img src="img/produtos/computador.jpg" alt="Computador">
                             <figcaption>Computador
                             <br><span class="precoFinal">R$ 20,00</span>
                             </figcaption>
-                        </figure>    
-                        </a>                
+                        </figure>
+                        </a>
                     </div>
-				<!-- fim produto -->	
-						
+				<!-- fim produto -->
+
 				<!-- um produto -->
-                     <div class="produto">  
-                     <a href="#">                    
+                     <div class="produto">
+                     <a href="#">
                         <figure>
                             <img src="img/produtos/default.jpg" alt="Notebook">
                             <figcaption>Notebook
                             <br>De <span class="precoInicial">R$ 40,00</span> por <span class="precoFinal">R$ 20,00</span>
                             </figcaption>
-                        </figure>     
-                        </a>               
+                        </figure>
+                        </a>
                     </div>
-				<!-- fim produto -->	
+				<!-- fim produto -->
 
-			</div>									
-			<!-- adicione mais produtos --> 
+			</div>
+			<!-- adicione mais produtos -->
 		</aside>
 	</div>
 	<!-- fim area central -->
@@ -303,5 +300,6 @@
 		<div id="ajuda">Precisa de ajuda? <span id="fechar">x</span></div>
 	</footer>
 	<!-- fim rodape -->
+    <script src="js/index.js"></script>
 </body>
 </html>
