@@ -1,0 +1,23 @@
+.delEm {
+  color: red;
+  cursor: pointer;
+}
+
+.headerCarrinho {
+    font-weight: bold;
+}
+
+div.produto-carrinho{
+  border-radius: 10px;
+  height: 50px;
+  margin: 10px;
+  padding: 10px;
+  background-color: white;
+  text-align: center;
+}
+
+div.botaoCarrinho {
+  border-radius: 1px;
+  padding: 4px;
+  margin: 0px;
+}

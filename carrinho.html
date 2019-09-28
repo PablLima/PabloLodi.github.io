@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<title>Rent a Tool</title>
+	<link rel="stylesheet" type="text/css" href="css/rent.css">
+	<link rel="stylesheet" type="text/css" href="css/carrinho.css">
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet"> <!-- web font Lobster -->
+	<script type="text/javascript" src="js/carrinho.js"></script>
+</head>
+<body>
+	<!-- cabeçalho -->
+	<header>
+		<h1>Rent a Tool</h1>
+		<div id="menu-login">
+			<span id="login">Olá, visitante! (<a href="#">login</a>)</span>
+			<span id="carrinho"><a href="#">Meu carrinho <span id="numItensCarrinho">(2)</span><img src="img/cart.png" width="32" alt="carrinho de compras"></a></span>
+		</div>
+        <p id="exibe-menu">Menu</p>
+		<nav class="menu-opcoes">
+			<ul>
+				<li><a href="cad_cliente.html">Minha Conta</a></li>
+				<li><a href="#">Programa de pontos</a></li>
+				<li><a href="#">Consumo solidário</a></li>
+				<li><a href="#">Quem somos</a></li>
+				<li><a href="#">Ajuda</a></li>
+			</ul>
+		</nav>
+	</header>
+	<!-- fim cabeçalho -->
+
+	<!-- area central com 3 colunas -->
+	<div class="container">
+		<section class="col-1">
+			<section class="busca">
+				<form>
+					<input type="search" placeholder="Busca..." name="busca">
+					<button formaction="index.html">OK</button>
+				</form>
+			</section>
+
+			<section class="menu-categorias">
+				<h2>Categorias</h2>
+				<nav>
+					<ul>
+						<li><a href="#">Marcenaria</a></li>
+						<li><a href="#">Jardinagem</a></li>
+						<li><a href="#">Limpeza</a></li>
+						<li><a href="#">Escritório</a></li>
+						<li><a href="#">Mecânica</a></li>
+					</ul>
+				</nav>
+			</section>
+		</section>
+
+		<section class="col-2">
+      <h2>Meu carrinho</h2>
+      <div class="lista-carrinho">
+				<!-- um produto -->
+				<div class="headerCarrinho produto-carrinho">
+							<span>Produto</span>
+							<span>- Preço Unitário</span>
+							<span>- Quantidade</span>
+							<span>- Preço Total Und.</span>
+        </div>
+				<!-- fim produto -->
+				<!-- um produto -->
+				<div class="produto-carrinho" onChange="atualizaSomaTotal(this)" onClick="deletaElemento(this)">
+							<span>Banana de Macaco</span>
+							<span> - </span>
+							<span>R$</span>
+							<span class="precoInicial">2</span>
+							<span> - </span>
+							<input class="campoQuantidade" type="number" placeholder="Insira a quantidade" name="quantidade">
+							<span> - </span>
+							<span>R$</span>
+							<span class="precoTotal">0</span>
+							<span> - </span>
+							<span class="delEm" onClick="clicaNoX()">X</span>
+        </div>
+				<!-- fim produto -->
+        <!-- um produto -->
+				<div class="produto-carrinho" onChange="atualizaSomaTotal(this)" onClick="deletaElemento(this)">
+							<span>Ciriguela</span>
+							<span> - </span>
+							<span>R$</span>
+							<span class="precoInicial">4</span>
+							<span> - </span>
+							<input class="campoQuantidade" type="number" placeholder="Insira a quantidade" name="quantidade">
+							<span> - </span>
+							<span>R$</span>
+							<span class="precoTotal">0</span>
+							<span> - </span>
+							<span class="delEm" onClick="clicaNoX()">X</span>
+        </div>
+				<!-- fim produto -->
+        <!-- um produto -->
+				<div class="produto-carrinho" onChange="atualizaSomaTotal(this)" onClick="deletaElemento(this)">
+							<span>Cagaita</span>
+							<span> - </span>
+							<span>R$</span>
+							<span class="precoInicial">3</span>
+							<span> - </span>
+							<input class="campoQuantidade" type="number" placeholder="Insira a quantidade" name="quantidade">
+							<span> - </span>
+							<span>R$</span>
+							<span class="precoTotal">0</span>
+							<span> - </span>
+							<span class="delEm" onClick="clicaNoX()">X</span>
+        </div>
+				<!-- fim produto -->
+        </br>
+				<div class="produto-carrinho botaoCarrinho">
+					<span class="headerCarrinho">Frete:</span>
+					<div class="form-frete" onChange="mudaValorFrete()">
+						<label><input type="radio" name="perfil" value="c" id="perfilC">Retirar no local</label>
+						<label><input type="radio" name="perfil" value="p" id="perfilP" checked>Entrega em casa</label>
+					<span class="msg-erro" id="msg-perfil"></span>
+					</div>
+	        </br>
+				</div>
+				<div class="produto-carrinho botaoCarrinho">
+					<br>
+        	<span class="headerCarrinho">Total Geral: </span><span>R$ </span><span id="valor-totalgeral">0</span>
+				</div>
+				<div class="produto-carrinho botaoCarrinho">
+	        <form action="fecharPedido.php">
+	         	<button type="submit">Finalizar pedido</button>
+	      	</form>
+					<form action="index.html">
+	         	<button type="submit">Continuar comprando</button>
+	      	</form>
+				</div>
+			</div>
+		</section>
+
+		<aside class="col-3">
+			<h2>Mais pedidos</h2>
+			<!-- container de mais pedidos -->
+			<div class="lista-produtos">
+
+				<!-- um produto -->
+                     <div class="produto">
+                     <a href="#">
+                        <figure>
+                            <img src="img/produtos/projetor.jpg" alt="Projetor multimídia">
+                            <figcaption>Projetor multimídia
+                            <br><span class="precoFinal">R$ 20,00</span>
+                            </figcaption>
+                        </figure>
+                        </a>
+                    </div>
+				<!-- fim produto -->
+
+				<!-- um produto -->
+                     <div class="produto">
+                     <a href="#">
+                        <figure>
+                            <img src="img/produtos/computador.jpg" alt="Computador">
+                            <figcaption>Computador
+                            <br><span class="precoFinal">R$ 20,00</span>
+                            </figcaption>
+                        </figure>
+                        </a>
+                    </div>
+				<!-- fim produto -->
+
+				<!-- um produto -->
+                     <div class="produto">
+                     <a href="#">
+                        <figure>
+                            <img src="img/produtos/default.jpg" alt="Notebook">
+                            <figcaption>Notebook
+                            <br>De <span class="precoInicial">R$ 40,00</span> por <span class="precoFinal">R$ 20,00</span>
+                            </figcaption>
+                        </figure>
+                        </a>
+                    </div>
+				<!-- fim produto -->
+
+			</div>
+			<!-- adicione mais produtos -->
+		</aside>
+	</div>
+	<!-- fim area central -->
+	<footer><p>Rent a Tool - Chapecó/SC</p>
+		<ul class="social">
+			<li><a href="http://facebook.com/rentatool"><img src="img/facebook.png" alt="Facebook"></a></li>
+			<li><a href="http://twitter.com/rentatool"><img src="img/twitter.png" alt="Twitter"></a></li>
+		</ul>
+		<div id="ajuda">Precisa de ajuda? <span id="fechar">x</span></div>
+	</footer>
+	<!-- fim rodape -->
+</body>
+</html>
