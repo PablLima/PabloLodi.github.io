@@ -20,7 +20,7 @@
 			display: block;
 		}
 		main {
-			margin-top: 7%;
+			margin-top: 125px;
 			margin-left: 150px;
 			width: 87%;
 		}
@@ -116,12 +116,30 @@
 			background-color: white;
 		}
 
-		@media only screen and (max-width: 700px) {
+		@media only screen and (max-width: 600px) {
 		    /* para desktop: */
 		    aside {width: 100%; position: initial; margin-top:0;}
 		    header {width: 100%; position: initial; }
-		    main {width: 100%;margin-left: 0;}
+		    main {width: 100%;margin-left: 0;margin-top: 20px}
 		}
+
+		@media only screen and (min-width: 768px) {
+		    /* para desktop: */
+		    aside {
+		    	width: 110px;
+		    	height: 100%;
+		    	position: fixed;
+		    	margin-top: 86px;}
+		    header {
+		    	width: 100%; 
+		    	position: fixed;}
+		    main {
+		    	width: 80%;
+		    	margin-top: 115px;
+		    	margin-left: 150px;
+		    }
+		}
+
 
 		table {
 		  border: 1px solid black;
