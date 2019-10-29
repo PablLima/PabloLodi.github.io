@@ -23,6 +23,7 @@
 			margin-top: 125px;
 			margin-left: 150px;
 			width: 87%;
+			text-align: center;
 		}
 		main div {
 			background-color: white;
@@ -66,7 +67,7 @@
 			padding-left: 1px;
 		}
 
-		h2 {
+		header h2 {
 			text-align: left;
 		}
 		a {
@@ -201,30 +202,50 @@
 		
 	</aside>
 	<main>
+		<h2>Modificar usuários</h2><br>
 		<div>			
-			<h3>Selecione a operação no menu esquerdo</h3><br><br>
-			<br><h3>Bem vindo, %usuário% </h3><br><br>
-			<dl>
-			  <dt>Percentual atual de serviço:</dt>
-			  <br>
-			  <dd class="percentage percentage-7">
-			    <span class="text">
-			      Máquinas: 7%
-			    </span>
-			  </dd>
-			  <dd class="percentage percentage-20">
-			    <span class="text">
-			      Refrigeração: 100%
-			    </span>
-			  </dd>
-			  <dd class="percentage percentage-2">
-			    <span class="text">
-			      Consumo de ração: 2%
-			    </span>
-			  </dd>
-			</dl>
-
+			<form action="index.html">
+				<label>Usuário</label>
+				<input type="text" name="login"><br>
+				<label>Nova senha</label>
+				<input type="text" name="senha"><br>
+				<label>Repetir nova senha</label>
+				<input type="text" name="rsenha"><br><br>
+				<button>Cadastrar</button><br><br>
+			</form>
 		</div>
+		<label>Pesquisar: <input type="text" name="searchInput" size=50></label>
+			<button>OK</button>
+			<a href="#">Filtros</a>
+					<button>Salvar</button>
+			<br><br>
+			<table style="width:100%">
+			  <tr>
+			    <th>Código</th>
+			    <th>Usuário</th> 
+			    <th>Data de registro</th>
+			    <th>Permissões</th>
+			  </tr>
+			  <tr>
+			    <td>001</td>
+			    <td>12/5/6</td> 
+			    <td>R$ 2</td>
+			   	<td>Alta qualidade</td>
+			  </tr>
+			  <tr>
+			    <td>002</td>
+			    <td>30/3/2019</td> 
+			    <td>R$ 1</td>
+			   	<td></td>
+			  </tr>
+			  <tr>
+			    <td>003</td>
+			    <td>30/2/2019</td> 
+			    <td>R$ 0.50</td>
+			   	<td>Qualidade aceitável</td>
+			  </tr>
+			  
+			</table>
 	</main>
 </body>
 <!-- <script src="https://kit.fontawesome.com/a076d05399.js"></script> -->
