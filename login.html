@@ -5,46 +5,23 @@
 	<style type="text/css" href="style.css"></style>
 	<meta charset="utf-8">
 	<style type="text/css">
-	h1 {
-		margin: 100px auto;
-		text-align: center;
-	}
-
-	* {
-		box-sizing: border-box;	
-		margin: 10px auto;
-	}
-
-	div {
-		display: flex;
-		text-align: center;
-		margin-left: auto;
-		margin-right: auto;
-		width: 8em;
-		position: fixed;
-	    top: 50%;
-	    left: 50%;
-	    width:30em;
-	    height:18em;
-	    margin-top: -9em; /*set to a negative number 1/2 of your height*/
-	    margin-left: -15em; /*set to a negative number 1/2 of your width*/
-	    border: 1px solid #ccc;
-	    background-color: #f3f3f3;
-	    text-align: center;
-	    align-items: center;
-	    justify-content: center;
-}
+		div, h1 {
+			text-align: center;
+		}
 	</style>
 </head>
 <body>
-	<h1>Milk Management</h1>
+	<h1>Milk Manager 2019</h1><br>
 	<div>
 		<form action="index.html">
-			<label>Usuário</label>
-			<input type="text" name="login"><br>
-			<label>Senha</label>
-			<input type="text" name="senha"><br>
-			<button>Submit</button>
+			<label>Usuário:</label>
+			<input type="text" name="login" required><br><br>
+			<label>Senha:</label>
+			<input type="password" name="senha" required><br><br>
+			<button>Entrar</button><br><br>
+		</form>
+		<form action="senha.html">
+			<button>Esqueci minha senha</button><br>
 		</form>
 	</div>
 </body>
