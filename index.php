@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <?php session_start() ?>
 	<title>2milk</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/all.css">
@@ -22,6 +23,7 @@
 		main {
 			margin-top: 125px;
 			margin-left: 150px;
+			width: 87%;
 		}
 		main div {
 			background-color: white;
@@ -123,6 +125,7 @@
 		}
 
 
+
 		table {
 		  border: 1px solid black;
 		}
@@ -136,14 +139,14 @@
 		  border-bottom: 1px solid #ddd;
 		}
 
-	</style>
+    </style>
 </head>
 <body>
 	<header>
 		<h2>Milk Manager 2019</h2>
 		<a href="adm/cadastro.html">Usuários</a>
 		<a href="preferencias.html">Preferências</a>
-		<a href="login.html">Fazer logoff</a>
+		<a href="logoff.php">Fazer logoff</a>
 	</header>
 	<aside>
 		<nav>
@@ -177,133 +180,35 @@
 						<i class="fas fa-chart-pie"></i><br>
 						<p>Estatísticas</p>
 					</a>
-				</li>				
+				</li>					
 			</ul>
 		</nav>
 		
 	</aside>
 	<main>
-		<div style="overflow-x:auto;">
-			<h3>Animais</h3><br>
-			<label>Pesquisar: <input type="text" name="searchInput" size=50></label>
-			<button>OK</button>
-			<a href="#">Filtros</a>
-			<br><br>
-			<fieldset>
-						<legend>Pesquisar por</legend>
-						<label>
-							<input type="checkbox" id="addb" name="addborda" value="5" onchange="">Código
-						</label>
-						<label>
-							<input type="checkbox" id="addb" name="addborda" value="5" onchange="">Nome
-						</label>
-						<label>
-							<input type="checkbox" id="addb" name="addborda" value="5" onchange="">Função
-						</label>
-						<label>
-							<input type="checkbox" id="addb" name="addborda" value="5" onchange="">Idade
-						</label>
-						<label>
-							<input type="checkbox" id="addb" name="addborda" value="5" onchange="">Estado
-						</label>
-						<label>
-							<input type="checkbox" id="addb" name="addborda" value="5" onchange="">Registro médico
-						</label>
-						
-						
-					</fieldset>
-			<br><br>
-			<table style="width:100%">
-			  <tr>
-			    <th>Código</th>
-			    <th>Nome</th> 
-			    <th>Função</th>
-			    <th>Idade (em anos)</th>
-			    <th>Estado</th>
-			    <th>Registro Médico</th>
-			  </tr>
-			  <tr>
-			    <td>0001</td>
-			    <td></td> 
-			    <td>Lactante</td>
-			    <td>5</td>
-			   	<td>Produzindo</td>
-			   	<td><a href="#">Acessar</a></td>
-			  </tr>
-			  <tr>
-			    <td>0003</td>
-			    <td>Madalena</td> 
-			    <td>Lactante</td>
-			    <td>3</td>
-			   	<td>Produzindo</td>
-			   	<td>N/A</td>
-			  </tr>
-			  <tr>
-			    <td>0012</td>
-			    <td>Gertrudes</td> 
-			    <td>Lactante</td>
-			    <td>4</td>
-			   	<td>Doente</td>
-			   	<td><a href="#">Acessar</a></td>
-			  </tr>
-			  <tr>
-			    <td>0001</td>
-			    <td></td> 
-			    <td>Lactante</td>
-			    <td>5</td>
-			   	<td>Produzindo</td>
-			   	<td><a href="#">Acessar</a></td>
-			  </tr>
-			  <tr>
-			    <td>0001</td>
-			    <td></td> 
-			    <td>Lactante</td>
-			    <td>5</td>
-			   	<td>Produzindo</td>
-			   	<td><a href="#">Acessar</a></td>
-			  </tr>
-			  <tr>
-			    <td>0062</td>
-			    <td></td> 
-			    <td>Lactante</td>
-			    <td>5</td>
-			   	<td>Produzindo</td>
-			   	<td><a href="#">Acessar</a></td>
-			  </tr>
-			  <tr>
-			    <td>0011</td>
-			    <td></td> 
-			    <td>Lactante</td>
-			    <td>5</td>
-			   	<td>Produzindo</td>
-			   	<td><a href="#">Acessar</a></td>
-			  </tr>
-			  <tr>
-			    <td>0002</td>
-			    <td>Amarelinha</td> 
-			    <td>Lactante</td>
-			    <td>5</td>
-			   	<td>Produzindo</td>
-			   	<td><a href="#">Acessar</a></td>
-			  </tr>
-			  <tr>
-			    <td>0031</td>
-			    <td></td> 
-			    <td>Lactante</td>
-			    <td>5</td>
-			   	<td>Produzindo</td>
-			   	<td><a href="#">Acessar</a></td>
-			  </tr>
-			  <tr>
-			    <td>0005</td>
-			    <td></td> 
-			    <td>Lactante</td>
-			    <td>5</td>
-			   	<td>Produzindo</td>
-			   	<td><a href="#">Acessar</a></td>
-			  </tr>
-			  
-			</table>
+		<div>			
+			<h3>Selecione a operação no menu esquerdo</h3><br><br>
+			<br><h3>Bem vindo, <?=$_SESSION['nome']?> </h3><br><br>
+			<dl>
+			  <dt>Percentual atual de serviço:</dt>
+			  <br>
+			  <dd class="percentage percentage-7">
+			    <span class="text">
+			      Máquinas: 7%
+			    </span>
+			  </dd>
+			  <dd class="percentage percentage-20">
+			    <span class="text">
+			      Refrigeração: 100%
+			    </span>
+			  </dd>
+			  <dd class="percentage percentage-2">
+			    <span class="text">
+			      Consumo de ração: 2%
+			    </span>
+			  </dd>
+			</dl>
+
 		</div>
 	</main>
 </body>

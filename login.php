@@ -13,9 +13,9 @@
 <body>
 	<h1>Milk Manager 2019</h1><br>
 	<div>
-		<form action="index.html">
+		<form action="autenticacao.php" method="post">
 			<label>Usuário:</label>
-			<input type="text" name="login" required><br><br>
+			<input type="text" name="usuario" required><br><br>
 			<label>Senha:</label>
 			<input type="password" name="senha" required><br><br>
 			<button>Entrar</button><br><br>

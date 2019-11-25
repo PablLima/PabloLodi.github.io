@@ -1,0 +1,47 @@
+drop table animal if exists;
+create table animal (
+    codigo integer not null,
+    nome varchar(30),
+    funcao varchar(30),
+    idade integer,
+    estado varchar(30)
+);
+
+drop table insumo if exists;
+create table animal(
+    codigo integer not null,
+    nome varchar(15) not null,
+    finali varchar(20),
+    dataaq date not null,
+    obs varchar(150)
+);
+
+drop table lote if exists;
+create table lote(
+    dataentrega date not null,
+    qtde integer not null,
+    obs varchar(150)
+);
+
+drop table alimento if exists;
+create table almento(
+    cod integer not null,
+    nome varchar(20) not null,
+    func varchar(30) not null,
+    peso float not null, 
+    prodtor varchar(30) not null,
+    dtaVal date,
+    retEsp varchar(30) not null
+);
+
+drop table usuario if exists;
+create table usuario(
+login varchar(50),
+senha varchar(50),
+email varchar(50),
+funcao varchar(50)
+);
+
+insert into usuario values('amaciador','moleza','sinef@gmail.com','admin');
+
+insert into animal values(0,'Cobra-Criada','Amaciador',3,'Destruindo');
