@@ -12,6 +12,19 @@ class Animal
         $result = $this->conexao->query($sql);
         return var_dump(pg_fetch_all($result));
     }
+
+    function queryOne($type,$search) {
+        $sql = "select * from animal where {$type}='$search'";
+        $result = $this->conexao->select($sql);
+        return $result;
+    }
+
+    function queryAll() {
+        $sql = "select * from animal";
+        $result = $this->conexao->select($sql);
+        return $result;
+    }
+    
     // $cobra-criada = new Animal;
     // $lista = $cobra-criada->query('select * from animal')
     // foreach($lista as $n => $v){}

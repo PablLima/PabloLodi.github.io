@@ -14,6 +14,19 @@ class Cliente
         return $result;
     }
 
+    function queryOne($type,$search) {
+        $sql = "select * from usuario where {$type}='$search'";
+        $result = $this->conexao->select($sql);
+        return $result;
+    }
+
+    function queryAll() {
+        $sql = "select * from usuario";
+        $result = $this->conexao->select($sql);
+        return $result;
+    }
+
+
     // or email = '$usuario'
 }
 ?>
