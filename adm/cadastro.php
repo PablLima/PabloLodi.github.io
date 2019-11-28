@@ -213,11 +213,29 @@
 				<input type="text" name="rsenha"><br><br>
 				<button>Cadastrar</button><br><br>
 			</form>
-		</div>
-		<label>Pesquisar: <input type="text" name="searchInput" size=50></label>
+        </div>
+        <form>
+		<label>Pesquisar: <input type="text" name="search" size=50></label>
 			<button>OK</button>
 			<a href="#">Filtros</a>
-					<button>Salvar</button>
+            <button>Salvar</button>
+            <fieldset>
+                <legend>Pesquisar por</legend>
+                    <label>
+                        <input type="radio" name="searchtype" value="login">Login
+                    </label>
+                    <label>
+                        <input type="radio" name="searchtype" value="senha" >Senha
+                    </label>
+                    <label>
+                        <input type="radio" name="searchtype" value="email">Email
+                    </label>
+                    <label>
+                        <input type="radio" name="searchtype" value="funcao">Funcao
+                    </label>
+            </fieldset>
+			</form>
+        </form>
 			<br><br>
 			<table style="width:100%">
 			  <tr>
@@ -225,19 +243,27 @@
 			    <th>Usuário</th> 
 			    <th>Data de registro</th>
 			    <th>Permissões</th>
-			  </tr>
-			  <tr>
-			    <td>001</td>
-			    <td>admin</td> 
-			    <td>01/01/0001</td>
-			   	<td>Administrador</td>
-			  </tr>
-			  <tr>
-			    <td>002</td>
-			    <td>João</td> 
-			    <td>25/12/2019</td>
-			   	<td>Funcionário</td>
-			  </tr>
+              </tr>
+              <?php
+
+                include "../classes/Cliente.php";
+                $c = new Cliente();
+
+                if (!isset($_GET['search']) || $_GET['search'] == NULL) $data = $c->queryAll();
+                    else if(isset($_GET['searchtype'])) $data = $c->queryOne($_GET['searchtype'],$_GET['search']);
+                    if (isset($data) && $data != NULL) {
+                        foreach($data as $d){
+                            ?>
+                            <tr>
+                                <td><?=$d['login']?></td>
+                                <td><?=$d['senha']?></td> 
+                                <td><?=$d['email']?></td>
+                                <td><?=$d['funcao']?></td>
+                            </tr>
+                            <?php
+                            }
+                    }
+                ?>
 			  
 			</table>
 	</main>
