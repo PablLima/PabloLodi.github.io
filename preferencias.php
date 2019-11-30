@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<?php
+    <?php
+        session_start();
+        if (isset($_GET['audio'])) {
+            $_SESSION['audio'] = true;
+        } else {
+            $_SESSION['audio'] = false;
+        }
 	?>
 	<title>2milk</title>
 	<meta charset="utf-8">
@@ -213,5 +219,13 @@
 	</main>
 </body>
 <script src="./js/grabber.js"></script>
+<?php 
+if (isset($_SESSION['audio'])) {
+	if ($_SESSION['audio'] == true) {
+		echo '<script type="text/javascript">',
+		'grabber()',
+		'</script>';
+	}
+}?>
 <!-- <script src="https://kit.fontawesome.com/a076d05399.js"></script> -->
 </html>
