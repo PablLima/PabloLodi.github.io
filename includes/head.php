@@ -3,12 +3,12 @@
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/all.css">
 	<link rel="stylesheet" href="./css/style.css">
-	<?php
+    <?php
         session_start();
-        if (isset($_SESSION['audio'])) {
-            $_SESSION['audio'] = true;
-        } else {
-            $_SESSION['audio'] = false;
-        }
+        if (isset($_GET['audio'])) { 
+			$_SESSION['audio'] = 1;
+		} else {
+			unset($_SESSION['audio']);
+		}
 	?>
 </head>
