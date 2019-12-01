@@ -1,47 +1,102 @@
-drop table animal if exists;
-create table animal (
-    codigo integer not null,
-    nome varchar(30),
-    funcao varchar(30),
-    idade integer,
-    estado varchar(30)
-);
+drop database milk;
+create database milk;
+\c milk;
 
-drop table insumo if exists;
-create table animal(
-    codigo integer not null,
-    nome varchar(15) not null,
-    finali varchar(20),
-    dataaq date not null,
-    obs varchar(150)
-);
-
-drop table lote if exists;
-create table lote(
-    dataentrega date not null,
-    qtde integer not null,
-    obs varchar(150)
-);
-
-drop table alimento if exists;
-create table almento(
-    cod integer not null,
-    nome varchar(20) not null,
-    func varchar(30) not null,
-    peso float not null, 
-    prodtor varchar(30) not null,
-    dtaVal date,
-    retEsp varchar(30) not null
-);
-
-drop table usuario if exists;
+drop table usuario;
 create table usuario(
-login varchar(50),
-senha varchar(50),
-email varchar(50),
-funcao varchar(50)
+    login varchar(50),
+    senha varchar(50),
+    email varchar(50),
+    funcao varchar(50)
+);
+
+drop table animal cascade;
+create table animal (
+    coda integer not null,
+    tipo varchar (25) not null,
+    astatus varchar(150) not null,
+    dtanasc date not null,
+    constraint pk_animal primary key (coda)
+);
+
+drop table propriedade cascade;
+create table propriedade (
+    codp integer not null,
+    nomed varchar(30) not null,
+    locali varchar (90) not null,
+    coda integer not null,
+    constraint pk_propriedade primary key (codp),
+    constraint fk_animal_propriedade foreign key (coda) references animal (coda)
+);
+
+drop table trabalhador cascade;
+create table trabalhador (
+    codt integer not null,
+    nomet varchar (30) not null,
+    funcao varchar (20),
+    codp integer not null,
+    constraint pk_trabalhador primary key (codt),
+    constraint fk_propriedade_trabalhador foreign key (codp) references propriedade (codp)
+);
+
+drop table avaliacao cascade;
+create table avaliacao (
+    prote integer not null,
+    gord integer not null,
+    bacte integer not null,
+    pinicial date not null,
+    pfinal date not null,
+    constraint pk_avaliacao primary key (pinicial)
+);
+
+drop table lote cascade;
+create table lote (
+    datae date not null,
+    qtde integer not null,
+    pinicial date not null,
+    constraint pk_lote primary key (datae),
+    constraint fk_avaliacao_lote foreign key (pinicial) references avaliacao (pinicial)
+);
+
+drop table alimento cascade;
+create table alimento (
+    codal integer not null,
+    nomeali varchar (20) not null,
+    tipo varchar(15) not null,
+    peso float not null,
+    dtaval date,
+    produtora varchar not null,
+    retesper varchar(15),
+    constraint pk_alimento primary key (codal)
+);
+
+drop table insumo cascade;
+create table insumo (
+    codin integer not null,
+    dtaaqui date not null,
+    inome varchar (20) not null,
+    finali varchar (20) not null,
+    obs varchar(100),
+    constraint pk_cod_insumo primary key (dtaaqui)
+);
+
+drop table produz cascade;
+create table produz (
+    coda integer not null,
+    datae date not null,
+    constraint fk_animal_produz foreign key (coda) references animal (coda),
+    constraint fk_lote_produz foreign key (datae) references lote (datae)
+);
+
+drop table depende;
+create table depende (
+    coda integer not null,
+    codal integer not null,
+    dtaaqui date not null,
+    constraint fk_animal_depende foreign key (coda) references animal (coda),
+    constraint fk_alimentos_depende foreign key (codal) references alimento (codal),
+    constraint fk_insumo_depende foreign key (dtaaqui) references insumo (dtaaqui)
 );
 
 insert into usuario values('amaciador','moleza','sinef@gmail.com','admin');
-
-insert into animal values(0,'Cobra-Criada','Amaciador',3,'Destruindo');
+insert into animal values(0,'Amaciador','Destruindo','01/01/2010');
