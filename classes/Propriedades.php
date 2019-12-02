@@ -1,6 +1,6 @@
 <?php
 require_once ("BD.php");
-class Animal
+class Propriedade
 {
     private $conexao;
 
@@ -14,25 +14,25 @@ class Animal
     }
 
     function queryOne($type,$search) {
-        $sql = "select * from animal where {$type}='$search'";
+        $sql = "select * from propriedade where {$type}='$search'";
         $result = $this->conexao->select($sql);
         return $result;
     }
 
     function queryAll() {
-        $sql = "select * from animal";
+        $sql = "select * from propriedade";
         $result = $this->conexao->select($sql);
         return $result;
     }
 
-    function remove($coda) {
-        $sql = "delete from animal where coda=$coda";
+    function remove($codp) {
+        $sql = "delete from propriedade where codp=$codp";
         $result = $this->conexao->query($sql);
         return $result;
     }
 
-    function insert($coda,$tipo,$status,$dtanasc) {
-        $sql = "insert into animal values($coda,'$tipo','$status','$dtanasc')";
+    function insert($codp,$nomed,$locali) {
+        $sql = "insert into propriedade values('$codp','$nomed','$locali')";
         $result = $this->conexao->query($sql);
         return $result;
     }
