@@ -158,48 +158,63 @@
 	</style>
 </head>
 <body>
+	<?php 
+		session_start();
+		if(!isset($_SESSION['nome'])) header("Location: ../login.php");
+	?>
 	<header>
 		<h2>Milk Manager 2019</h2>
-		<a href="../adm/cadastro.html">Usuários</a>
-		<a href="../preferencias.html">Preferências</a>
-		<a href="../login.html">Fazer logoff</a>
+		<a href="../adm/cadastro.php">Usuários</a>
+		<a href="../preferencias.php">Preferências</a>
+		<a href="../logoff.php">Fazer logoff</a>
 	</header>
-	<aside>
+	<aside class="access">
 		<nav>
 			<ul>
 				<li>
-					<a href="../animais.html">
+					<a href="../animais.php">
 						<i class="fas fa-paw"></i><br>
 						<p>Animais</p>
 					</a>
 				</li>
 				<li>
-					<a href="../insumos.html">
-						<i class="fas fa-bacon"></i><br>
-						<p>Insumos</p>
-					</a>
-				</li>
-				<li>
-					<a href="../alimentacao.html">
+					<a href="../alimentacao.php">
 						<i class="fas fa-utensils"></i><br>
 						<p>Alimentação</p>
 					</a>
 				</li>
 				<li>
-					<a href="../lotes.html">
-						<i class="fas fa-car"></i><br>
-						<p>Produtividade</p>
+					<a href="../insumos.php">
+						<i class="fas fa-bacon"></i><br>
+						<p>Insumos</p>
 					</a>
 				</li>
 				<li>
-					<a href="../estatisticas.html">
+					<a href="../alimentacao.php">
+						<i class="fas fa-utensils"></i><br>
+						<p>Propriedades</p>
+					</a>
+				</li>
+				<li>
+					<a href="../alimentacao.php">
+						<i class="fas fa-utensils"></i><br>
+						<p>Trabalhador</p>
+					</a>
+				</li>
+				<li>
+					<a href="../lotes.php">
+						<i class="fas fa-car"></i><br>
+						<p>Lotes</p>
+					</a>
+				</li>
+				<li>
+					<a href="../estatisticas.php">
 						<i class="fas fa-chart-pie"></i><br>
 						<p>Estatísticas</p>
 					</a>
-				</li>					
+				</li>				
 			</ul>
 		</nav>
-		
 	</aside>
 	<main>
 		<h2>Modificar usuários</h2><br>

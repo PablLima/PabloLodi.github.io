@@ -36,6 +36,12 @@ class Animal
         $result = $this->conexao->query($sql);
         return $result;
     }
+
+    function update($coda,$tipo,$status,$dtanasc) {
+        $sql = "update animal set tipo='$tipo', status='$status', dtanasc='$dtanasc' where coda=$coda";
+        $result = $this->conexao->query($sql);
+        return $result;
+    }
     
     // $cobra-criada = new Animal;
     // $lista = $cobra-criada->query('select * from animal')

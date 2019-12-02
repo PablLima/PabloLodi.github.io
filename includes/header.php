@@ -2,5 +2,5 @@
     <h2>Milk Manager 2019</h2>
     <a href="adm/cadastro.php">Usuários</a>
     <a href="preferencias.php">Preferências</a>
-    <a href="login.php">Fazer logoff</a>
+    <a href="logoff.php">Fazer logoff</a>
 </header>
