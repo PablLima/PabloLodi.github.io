@@ -1,6 +1,6 @@
 <?php
 require_once ("BD.php");
-class Animal
+class Insumo
 {
     private $conexao;
 
@@ -25,14 +25,14 @@ class Animal
         return $result;
     }
 
-    function remove($coda) {
-        $sql = "delete from animal where coda=$coda";
+    function remove($codin) {
+        $sql = "delete from animal where coda=$codin";
         $result = $this->conexao->query($sql);
         return $result;
     }
 
-    function insert($coda,$tipo,$status,$dtanasc) {
-        $sql = "insert into animal values($coda,'$tipo','$status','$dtanasc')";
+    function insert($codin,$dtaaqui,$inome,$finali,$obs) {
+        $sql = "insert into insumo values($codin,$dtaaqui,$inome,$finali,$obs')";
         $result = $this->conexao->query($sql);
         return $result;
     }
