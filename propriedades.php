@@ -16,13 +16,13 @@
 
 				<legend class="access">Pesquisar por</legend>
 				<label>
-					<input type="date" name="searchtype" value="codp">Código
+					<input type="number" name="searchtype" value="codp">Código
 				</label>
 				<label>
-					<input type="number" name="searchtype" value="nomed">Nome do dono
+					<input type="text" name="searchtype" value="nomed">Nome do dono
                 </label>
 				<label>
-					<input type="date" name="searchtype" value="locali">Localização
+					<input type="text" name="searchtype" value="locali">Localização
 				</label>
 				
 			</fieldset>
