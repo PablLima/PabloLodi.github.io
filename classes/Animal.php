@@ -24,6 +24,19 @@ class Animal
         $result = $this->conexao->select($sql);
         return $result;
     }
+
+    function removeAnimal($coda) {
+        $sql = "delete from animal where coda=$coda";
+        $result = $this->conexao->query($sql);
+        header("Location: animal.php?delete=1");
+        return $result;
+    }
+
+    function insertAnimal($coda,$tipo,$status,$dtanasc) {
+        $sql = "insert from animal values($coda,$tipo,$status,$dtanasc)";
+        $result = $this->conexao->query($sql);
+        return $result;
+    }
     
     // $cobra-criada = new Animal;
     // $lista = $cobra-criada->query('select * from animal')

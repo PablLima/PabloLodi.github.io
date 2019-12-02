@@ -9,37 +9,44 @@
 			<h3>Animais</h3><br>
 			<label>Pesquisar: <input type="text" name="search" size=50></label>
 			<button>OK</button>
-			<a href="#" onclick="toggleHidden()">Filtros</a>
+			<a href="#" onclick="toggleHidden()">Mais opções</a>
 			<br><br>
-			<fieldset id="hiddenId" hidden>
-						<legend class="access">Pesquisar por</legend>
-						<label>
-                        <input type="radio" name="searchtype" value="codigo">Código
-						</label>
-						<label>
-							<input type="radio" name="searchtype" value="nome" checked>Nome
-						</label>
-						<label>
-							<input type="radio" name="searchtype" value="funcao">Função
-						</label>
-						<label>
-							<input type="radio" name="searchtype" value="idade">Idade
-						</label>
-						<label>
-							<input type="radio" name="searchtype" value="estado">Estado
-						</label>
-						
-					</fieldset>
+
+			<fieldset class="teste" hidden>
+
+				<legend class="access">Pesquisar por</legend>
+				<label>
+				<input type="radio" name="searchtype" value="coda">Código
+				</label>
+				<label>
+					<input type="radio" name="searchtype" value="tipo" checked>Tipo
+				</label>
+				<label>
+					<input type="radio" name="searchtype" value="astatus">Status
+				</label>
+				<label>
+					<input type="radio" name="searchtype" value="dtanasc">Data de Nascimento
+				</label>
+				
+			</fieldset>
+			</form>
 			<br><br>
 			<table class="access" style="width:100%">
 			  <tr>
 			    <th>Código</th>
-			    <th>Nome</th> 
-			    <th>Função</th>
-			    <th>Idade (em anos)</th>
-			    <th>Estado</th>
-			    <th>Registro Médico</th>
+			    <th>Tipo</th> 
+			    <th>Status</th>
+			    <th>Data de Nascimento</th>
 			  </tr>
+			  <tr class="teste" style="width:100%">
+			  	<form action="inserir.php">
+					<td><input type="text" name="coda"></td>
+					<td><input type="text" name="tipo"></td> 
+					<td><input type="text" name="astatus"></td>
+					<td><input type="text" name="dtanasc"></td>
+					<td><button>Inserir</button></td>
+				</form>
+			</tr>
 				<?php
 
 				include "./classes/Animal.php";
@@ -51,18 +58,18 @@
 						foreach($data as $d){
 							?>
 							<tr>
-								<td><?=$d['codigo']?></td>
-								<td><?=$d['nome']?></td> 
-								<td><?=$d['funcao']?></td>
-								<td><?=$d['idade']?></td>
-								<td><?=$d['estado']?></td>
+								<td><?=$d['coda']?></td>
+								<td><?=$d['tipo']?></td> 
+								<td><?=$d['astatus']?></td>
+								<td><?=$d['dtanasc']?></td>
+								<td><a href="#" onclick="<?=$a->removeAnimal($d['coda'])?>)">Remover</td>
 							</tr>
 							<?php
 							}
 					}
 				?>
 			</table>
-		</form>
+
 	</main>
 </body>
 <script src="./js/grabber.js"></script>
