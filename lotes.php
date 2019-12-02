@@ -6,7 +6,7 @@
 <?php require "./includes/aside.php" ?>		
 	<main class="access">
 		<form>
-			<h3>Animais</h3><br>
+			<h3>Lotes</h3><br>
 			<label>Pesquisar: <input type="text" name="search" size=50></label>
 			<button>OK</button>
 			<a href="#" onclick="toggleHidden()">Mais opções</a>
@@ -16,16 +16,13 @@
 
 				<legend class="access">Pesquisar por</legend>
 				<label>
-				<input type="radio" name="searchtype" value="coda">Código
+					<input type="date" name="searchtype" value="datae">Data de entrega
 				</label>
 				<label>
-					<input type="radio" name="searchtype" value="tipo" checked>Tipo
+					<input type="number" name="searchtype" value="qtde">Quantidade
 				</label>
 				<label>
-					<input type="radio" name="searchtype" value="astatus">Status
-				</label>
-				<label>
-					<input type="radio" name="searchtype" value="dtanasc">Data de Nascimento
+					<input type="date" name="searchtype" value="pinicial">
 				</label>
 				
 			</fieldset>
@@ -40,17 +37,16 @@
 			  </tr>
 			  <tr style="width:100%">
 			  	<form action="inserir.php">
-					<td><input type="number" name="coda" required></td>
-					<td><input type="text" name="tipo" required></td> 
-					<td><input type="text" name="astatus" required></td>
-					<td><input type="date" name="dtanasc" required></td>
+					<td><input type="date" name="datae" required></td>
+					<td><input type="number" name="qtde" required></td>
+					<td><input type="date" name="pinicial" required></td> 
 					<td><button>Inserir</button></td>
 				</form>
 			</tr>
 				<?php
 
-				include "./classes/Animal.php";
-				$a = new Animal();
+				include "./classes/Lotes.php";
+				$a = new Lote();
 
 				if (!isset($_GET['search']) || $_GET['search'] == NULL) $data = $a->queryAll();
 					else if(isset($_GET['searchtype'])) $data = $a->queryOne($_GET['searchtype'],$_GET['search']);
@@ -59,11 +55,9 @@
 							?>
 								<form action='remover.php'>
 									<tr>
-										<td><?=$d['coda']?></td>
-										<td><?=$d['tipo']?></td> 
-										<td><?=$d['astatus']?></td>
-										<td><?=$d['dtanasc']?></td>
-										<td><a class="teste" href="remover.php?coda=<?=$d['coda']?>" hidden>Remover</a></td>
+										<td><?=$d['datae']?></td>
+										<td><?=$d['qtde']?></td> 
+										<td><a class="teste" href="remover.php?datae=<?=$d['datae']?>" hidden>Remover</a></td>
 									</tr>
 								</form>
 							<?php

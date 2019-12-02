@@ -14,25 +14,25 @@ class Insumo
     }
 
     function queryOne($type,$search) {
-        $sql = "select * from animal where {$type}='$search'";
+        $sql = "select * from insumo where {$type}='$search'";
         $result = $this->conexao->select($sql);
         return $result;
     }
 
     function queryAll() {
-        $sql = "select * from animal";
+        $sql = "select * from insumo";
         $result = $this->conexao->select($sql);
         return $result;
     }
 
     function remove($codin) {
-        $sql = "delete from animal where coda=$codin";
+        $sql = "delete from insumo where codin=$codin";
         $result = $this->conexao->query($sql);
         return $result;
     }
 
     function insert($codin,$dtaaqui,$inome,$finali,$obs) {
-        $sql = "insert into insumo values($codin,$dtaaqui,$inome,$finali,$obs')";
+        $sql = "insert into insumo values('$codin','$dtaaqui','$inome','$finali','$obs')";
         $result = $this->conexao->query($sql);
         return $result;
     }

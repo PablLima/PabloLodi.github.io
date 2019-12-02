@@ -1,6 +1,6 @@
 <?php
 require_once ("BD.php");
-class Animal
+class Lote
 {
     private $conexao;
 
@@ -14,25 +14,25 @@ class Animal
     }
 
     function queryOne($type,$search) {
-        $sql = "select * from animal where {$type}='$search'";
+        $sql = "select * from lote where {$type}='$search'";
         $result = $this->conexao->select($sql);
         return $result;
     }
 
     function queryAll() {
-        $sql = "select * from animal";
+        $sql = "select * from lote";
         $result = $this->conexao->select($sql);
         return $result;
     }
 
-    function remove($coda) {
-        $sql = "delete from animal where coda=$coda";
+    function remove($datae) {
+        $sql = "delete from lote where datae=$datae";
         $result = $this->conexao->query($sql);
         return $result;
     }
 
-    function insert($coda,$tipo,$status,$dtanasc) {
-        $sql = "insert into animal values($coda,'$tipo','$status','$dtanasc')";
+    function insert($datae,$qtde,$pinicial) {
+        $sql = "insert into lote values('$datae','$qtde','$pinicial')";
         $result = $this->conexao->query($sql);
         return $result;
     }

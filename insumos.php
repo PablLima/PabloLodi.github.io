@@ -6,7 +6,7 @@
 <?php require "./includes/aside.php" ?>		
 	<main class="access">
 		<form>
-			<h3>Animais</h3><br>
+			<h3>Insumos</h3><br>
 			<label>Pesquisar: <input type="text" name="search" size=50></label>
 			<button>OK</button>
 			<a href="#" onclick="toggleHidden()">Mais opções</a>
@@ -16,16 +16,16 @@
 
 				<legend class="access">Pesquisar por</legend>
 				<label>
-				<input type="radio" name="searchtype" value="codin">Código
+				<input type="number" name="searchtype" value="codin">Código
 				</label>
 				<label>
-					<input type="radio" name="searchtype" value="dtaqui" checked>Data de aquisição
+					<input type="date" name="searchtype" value="dtaqui" checked>Data de aquisição
 				</label>
 				<label>
-					<input type="radio" name="searchtype" value="inome">Nome
+					<input type="text" name="searchtype" value="inome">Nome
 				</label>
 				<label>
-					<input type="radio" name="searchtype" value="finali">Finalidade
+					<input type="text" name="searchtype" value="finali">Finalidade
 				</label>
 				
 			</fieldset>
@@ -42,9 +42,9 @@
 			  <tr style="width:100%">
 			  	<form action="inserir.php">
 					<td><input type="number" name="codin" required></td>
-					<td><input type="text" name="dtaqui" required></td> 
+					<td><input type="date" name="dtaqui" required></td> 
 					<td><input type="text" name="inome" required></td>
-					<td><input type="date" name="finali" required></td>
+					<td><input type="text" name="finali" required></td>
 					<td><input type="text" name="obs" required></td>
 					<td><button>Inserir</button></td>
 				</form>
@@ -66,7 +66,7 @@
 										<td><?=$d['inome']?></td>
 										<td><?=$d['finali']?></td>
 										<td><?=$d['obs']?></td>
-										<td><a class="teste" href="remover.php?coda=<?=$d['coda']?>" hidden>Remover</a></td>
+										<td><a class="teste" href="remover.php?codin=<?=$d['codin']?>" hidden>Remover</a></td>
 									</tr>
 								</form>
 							<?php
