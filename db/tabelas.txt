@@ -68,6 +68,7 @@ create table alimento (
     dtaval date,
     produtora varchar not null,
     retesper varchar(15),
+    datau date,
     constraint pk_alimento primary key (codal)
 );
 

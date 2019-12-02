@@ -48,6 +48,7 @@
 				<th>Data de Validade</th>
 				<th>Produtora</th>
 				<th>Retorno esperado</th>
+				<th>Utilizado em</th>
 			  </tr>
 			  <tr style="width:100%">
 			  	<form action="inserir.php">
@@ -58,6 +59,7 @@
 					<td><input type="date" name="dtaval" required></td>
 					<td><input type="text" name="produtora" required></td>
 					<td><input type="number" name="retesper" required></td>
+					<td><input type="date" name="datau" required></td>
 					<td><button>Inserir</button></td>
 				</form>
 			</tr>
