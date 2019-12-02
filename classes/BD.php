@@ -12,20 +12,6 @@ class BD {
         return pg_query($this->conexao, $sql);
     }
 
-/*     function select($sql) {
-        //recebe um select qualquer, executa e devolve um array de resultados.
-        //o resultado será um array com índice numérico, onde cada linha conterá um array associativo com os dados selecionados no BD
-        $retorno = mysqli_query($this->conexao, $sql); // $this->conexao->query($sql);
-        $arrayResultados = array();   
-        if (mysqli_num_rows($retorno) > 0) {
-            while($linha = mysqli_fetch_assoc($retorno)) {
-                $arrayResultados[] = $linha;
-            }
-        }
-        return $arrayResultados;
-    } */
-    
-
     function select($sql) {
         $retorno = pg_query($this->conexao, $sql);
         $array = array();

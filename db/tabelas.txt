@@ -99,5 +99,5 @@ create table depende (
     constraint fk_insumo_depende foreign key (dtaaqui) references insumo (dtaaqui)
 );
 
-insert into usuario values('amaciador','moleza','sinef@gmail.com','admin');
-insert into animal values(0,'Amaciador','Destruindo','01/01/2010');
+insert into usuario values('jo',md5('joao12345'),'sinef@gmail.com','admin');
+insert into animal values(0,'Producao','Saudavel','01/01/2018');

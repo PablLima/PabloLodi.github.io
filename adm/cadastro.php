@@ -158,13 +158,20 @@
 	</style>
 </head>
 <body>
-<header>
-		<h2><a href="../index.php">Milk Manager 2019</a></h2>
+	<?php 
+		session_start();
+		if(!isset($_SESSION['nome'])) header("Location: ../login.php");
+	?>
+	<header>
+		<h2>Milk Manager 2019</h2>
 		<a href="../adm/cadastro.php">Usuários</a>
 		<a href="../preferencias.php">Preferências</a>
 		<a href="../logoff.php">Fazer logoff</a>
 	</header>
+<<<<<<< HEAD
 	
+=======
+>>>>>>> 1d07798b77138f923ccb3c84291d71cb99c34808
 	<aside class="access">
 		<nav>
 			<ul>
@@ -190,6 +197,7 @@
 					<a href="../alimentacao.php">
 						<i class="fas fa-utensils"></i><br>
 						<p>Propriedades</p>
+<<<<<<< HEAD
 					</a>
 				</li>
 				<li>
@@ -199,6 +207,17 @@
 					</a>
 				</li>
 				<li>
+=======
+					</a>
+				</li>
+				<li>
+					<a href="../alimentacao.php">
+						<i class="fas fa-utensils"></i><br>
+						<p>Trabalhador</p>
+					</a>
+				</li>
+				<li>
+>>>>>>> 1d07798b77138f923ccb3c84291d71cb99c34808
 					<a href="../lotes.php">
 						<i class="fas fa-car"></i><br>
 						<p>Lotes</p>

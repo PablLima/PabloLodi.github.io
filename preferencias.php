@@ -2,7 +2,8 @@
 <html>
 <head>
     <?php
-        session_start();
+		session_start();
+		if(!isset($_SESSION['nome'])) header("Location: login.php");
         if (isset($_GET['audio']) && $_GET['audio'] == 1) { 
 			$_SESSION['audio'] = true;
 		} else {
