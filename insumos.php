@@ -16,16 +16,16 @@
 
 				<legend class="access">Pesquisar por</legend>
 				<label>
-				<input type="radio" name="searchtype" value="coda">Código
+				<input type="radio" name="searchtype" value="codin">Código
 				</label>
 				<label>
-					<input type="radio" name="searchtype" value="tipo" checked>Tipo
+					<input type="radio" name="searchtype" value="dtaqui" checked>Data de aquisição
 				</label>
 				<label>
-					<input type="radio" name="searchtype" value="astatus">Status
+					<input type="radio" name="searchtype" value="inome">Nome
 				</label>
 				<label>
-					<input type="radio" name="searchtype" value="dtanasc">Data de Nascimento
+					<input type="radio" name="searchtype" value="finali">Finalidade
 				</label>
 				
 			</fieldset>
@@ -34,23 +34,25 @@
 			<table class="access" style="width:100%">
 			  <tr>
 			    <th>Código</th>
-			    <th>Tipo</th> 
-			    <th>Status</th>
-			    <th>Data de Nascimento</th>
+			    <th>Data de aquisição</th> 
+			    <th>Nome</th>
+			    <th>Finalidade</th>
+				<th>Observações</th>
 			  </tr>
 			  <tr style="width:100%">
 			  	<form action="inserir.php">
-					<td><input type="number" name="coda" required></td>
-					<td><input type="text" name="tipo" required></td> 
-					<td><input type="text" name="astatus" required></td>
-					<td><input type="date" name="dtanasc" required></td>
+					<td><input type="number" name="codin" required></td>
+					<td><input type="text" name="dtaqui" required></td> 
+					<td><input type="text" name="inome" required></td>
+					<td><input type="date" name="finali" required></td>
+					<td><input type="text" name="obs" required></td>
 					<td><button>Inserir</button></td>
 				</form>
 			</tr>
 				<?php
 
-				include "./classes/Animal.php";
-				$a = new Animal();
+				include "./classes/Insumo.php";
+				$a = new Insumo();
 
 				if (!isset($_GET['search']) || $_GET['search'] == NULL) $data = $a->queryAll();
 					else if(isset($_GET['searchtype'])) $data = $a->queryOne($_GET['searchtype'],$_GET['search']);
@@ -59,10 +61,11 @@
 							?>
 								<form action='remover.php'>
 									<tr>
-										<td><?=$d['coda']?></td>
-										<td><?=$d['tipo']?></td> 
-										<td><?=$d['astatus']?></td>
-										<td><?=$d['dtanasc']?></td>
+										<td><?=$d['codin']?></td>
+										<td><?=$d['dtaqui']?></td> 
+										<td><?=$d['inome']?></td>
+										<td><?=$d['finali']?></td>
+										<td><?=$d['obs']?></td>
 										<td><a class="teste" href="remover.php?coda=<?=$d['coda']?>" hidden>Remover</a></td>
 									</tr>
 								</form>
