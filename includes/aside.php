@@ -8,6 +8,12 @@
                 </a>
             </li>
             <li>
+                <a href="alimentacao.php">
+                    <i class="fas fa-utensils"></i><br>
+                    <p>Alimentação</p>
+                </a>
+            </li>
+            <li>
                 <a href="insumos.php">
                     <i class="fas fa-bacon"></i><br>
                     <p>Insumos</p>
@@ -16,13 +22,19 @@
             <li>
                 <a href="alimentacao.php">
                     <i class="fas fa-utensils"></i><br>
-                    <p>Alimentação</p>
+                    <p>Propriedades</p>
+                </a>
+            </li>
+            <li>
+                <a href="alimentacao.php">
+                    <i class="fas fa-utensils"></i><br>
+                    <p>Trabalhador</p>
                 </a>
             </li>
             <li>
                 <a href="lotes.php">
                     <i class="fas fa-car"></i><br>
-                    <p>Produtividade</p>
+                    <p>Lotes</p>
                 </a>
             </li>
             <li>

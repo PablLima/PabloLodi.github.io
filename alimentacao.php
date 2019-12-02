@@ -7,36 +7,35 @@
 	<main>
 		<div style="overflow-x:auto;">
 			<h3>Alimentação</h3><br>
-			<label>Pesquisar: <input type="text" name="searchInput" size=50></label>
+			<label>Pesquisar: <input type="text" name="search" size=50></label>
 			<button>OK</button>
-			<a href="#">Filtros</a>
+			<a href="#" onclick="toggleHidden()">Filtros</a>
 			<br><br>
-			<fieldset>
-						<legend>Pesquisar por</legend>
+			<fieldset id="hiddenId" hidden>
+						<legend class="access">Pesquisar por</legend>
 						<label>
-							<input type="checkbox" id="addb" name="addborda" value="5" onchange="">Código
+                        <input type="radio" name="searchtype" value="cod">Código
 						</label>
 						<label>
-							<input type="checkbox" id="addb" name="addborda" value="5" onchange="">Nome
+							<input type="radio" name="searchtype" value="nome" checked>Nome
 						</label>
 						<label>
-							<input type="checkbox" id="addb" name="addborda" value="5" onchange="">Função
+							<input type="radio" name="searchtype" value="func">Função
 						</label>
 						<label>
-							<input type="checkbox" id="addb" name="addborda" value="5" onchange="">Peso
+							<input type="radio" name="searchtype" value="peso">Peso(em gramas)
 						</label>
 						<label>
-							<input type="checkbox" id="addb" name="addborda" value="5" onchange="">Produtor
+							<input type="radio" name="searchtype" value="prodtor">Produtor
 						</label>
 						<label>
-							<input type="checkbox" id="addb" name="addborda" value="5" onchange="">Data de validade estimada
+							<input type="radio" name="searchtype" value="dtaval">Validade estimada
 						</label>
 						<label>
-							<input type="checkbox" id="addb" name="addborda" value="5" onchange="">Retorno esperado
+							<input type="radio" name="searchtype" value="retesp">Retorno esperado (R$)
 						</label>
+						
 					</fieldset>
-					<br>
-					<button>Salvar</button>
 			<br><br>
 			<table style="width:100%">
 			  <tr>
@@ -70,15 +69,4 @@
 		</div>
 	</main>
 </body>
-<script src="./js/grabber.js"></script>
-<?php 
-if (isset($_SESSION['audio'])) {
-	if ($_SESSION['audio'] == true) {
-		echo '<script type="text/javascript">',
-		'grabber()',
-		'</script>';
-	}
-}
-?>
-<!-- <script src="https://kit.fontawesome.com/a076d05399.js"></script> -->
-</html>
+<?php require "./includes/footer.php" ?>

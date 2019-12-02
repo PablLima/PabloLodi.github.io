@@ -3,11 +3,11 @@
 <head>
     <?php
         session_start();
-        if (isset($_GET['audio'])) {
-            $_SESSION['audio'] = true;
-        } else {
-            $_SESSION['audio'] = false;
-        }
+        if (isset($_GET['audio'])) { 
+			$_SESSION['audio'] = 1;
+		} else {
+			unset($_SESSION['audio']);
+		}
 	?>
 	<title>2milk</title>
 	<meta charset="utf-8">

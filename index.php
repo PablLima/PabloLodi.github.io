@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-<?php session_start() ?>
 <?php require "./includes/head.php" ?>
 <body>
 <?php require "./includes/header.php" ?>

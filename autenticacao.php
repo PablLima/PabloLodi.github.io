@@ -21,11 +21,9 @@ else{
 		session_start();
 		$_SESSION['nome'] = $dados[0]['login']; 
 		$_SESSION['funcao'] = $dados[0]['funcao'];
-		$_SESSION['audio'] = false;
 		$expira = time() + 60 * 60 * 24 * 7;
 		setcookie("nome", $dados[0]['nome'], $expira);
 		setcookie("funcao", $dados[0]['funcao'], $expira);
-		setcookie("audio", false, $expira);
 		// if(isset($_POST['lembrar'])){
 		// 	$expira = time() + 60 * 60 * 24 * 7;
 		// 	setcookie("nome", $dados[0]['nome'], $expira);
