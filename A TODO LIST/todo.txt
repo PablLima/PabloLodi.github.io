@@ -1,2 +1,3 @@
 - Implementar requisitos restantes
 - Corrigir responsividade
+- Arrumar estatística (Implementar dados)

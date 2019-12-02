@@ -1,6 +1,6 @@
-<aside class="access">
+<aside>
     <nav>
-        <ul>
+        <ul class="access">
             <li>
                 <a href="#" onclick="ajaxReload('animais.php')">
                     <i class="fas fa-paw"></i><br>
