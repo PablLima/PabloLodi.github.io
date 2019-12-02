@@ -1,10 +1,3 @@
-<!DOCTYPE html>
-<html>
-<?php require "./includes/head.php" ?>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-<body>
-<?php require "./includes/header.php" ?>
-<?php require "./includes/aside.php" ?>	
 	<main>
 		<div>
 			<h3>Estatísticas</h3><br>
@@ -43,14 +36,4 @@ var myChart = new Chart(ctx, {
     }
 });
 </script>
-<script src="./js/grabber.js"></script>
-<?php 
-if (isset($_SESSION['audio'])) {
-	if ($_SESSION['audio'] == true) {
-		echo '<script type="text/javascript">',
-		'grabber()',
-		'</script>';
-	}
-}?>
-<!-- <script src="https://kit.fontawesome.com/a076d05399.js"></script> -->
-</html>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>

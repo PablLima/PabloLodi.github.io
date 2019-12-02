@@ -20,7 +20,7 @@ function ajaxReload(page){
 	req.onreadystatechange = function(){
 		if(this.readyState == 4 && this.status == 200){ // retorno OK
 			// define o que acontece quando vier o retorno OK do servidor
-			document.getElementsByTagName("main")[0].innerHTML = this.responseText;
+			document.getElementsByTagName("html")[0].innerHTML = this.responseText;
 		}
 	}
 }

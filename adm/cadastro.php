@@ -197,7 +197,6 @@
 					<a href="../alimentacao.php">
 						<i class="fas fa-utensils"></i><br>
 						<p>Propriedades</p>
-<<<<<<< HEAD
 					</a>
 				</li>
 				<li>
@@ -207,17 +206,6 @@
 					</a>
 				</li>
 				<li>
-=======
-					</a>
-				</li>
-				<li>
-					<a href="../alimentacao.php">
-						<i class="fas fa-utensils"></i><br>
-						<p>Trabalhador</p>
-					</a>
-				</li>
-				<li>
->>>>>>> 1d07798b77138f923ccb3c84291d71cb99c34808
 					<a href="../lotes.php">
 						<i class="fas fa-car"></i><br>
 						<p>Lotes</p>

@@ -22,7 +22,7 @@ else{
 		$_SESSION['nome'] = $dados[0]['login']; 
 		$_SESSION['funcao'] = $dados[0]['funcao'];
 		$expira = time() + 60 * 60 * 24 * 7;
-		setcookie("nome", $dados[0]['nome'], $expira);
+		setcookie("nome", $dados[0]['login'], $expira);
 		setcookie("funcao", $dados[0]['funcao'], $expira);
 		// if(isset($_POST['lembrar'])){
 		// 	$expira = time() + 60 * 60 * 24 * 7;
