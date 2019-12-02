@@ -158,67 +158,68 @@
 	</style>
 </head>
 <body>
-	<header>
-		<h2>Milk Manager 2019</h2>
-		<a href="../adm/cadastro.html">Usuários</a>
-		<a href="../preferencias.html">Preferências</a>
-		<a href="../login.html">Fazer logoff</a>
+<header>
+		<h2><a href="../index.php">Milk Manager 2019</a></h2>
+		<a href="../adm/cadastro.php">Usuários</a>
+		<a href="../preferencias.php">Preferências</a>
+		<a href="../logoff.php">Fazer logoff</a>
 	</header>
-	<aside>
+	
+	<aside class="access">
 		<nav>
 			<ul>
 				<li>
-					<a href="../animais.html">
+					<a href="../animais.php">
 						<i class="fas fa-paw"></i><br>
 						<p>Animais</p>
 					</a>
 				</li>
 				<li>
-					<a href="../insumos.html">
-						<i class="fas fa-bacon"></i><br>
-						<p>Insumos</p>
-					</a>
-				</li>
-				<li>
-					<a href="../alimentacao.html">
+					<a href="../alimentacao.php">
 						<i class="fas fa-utensils"></i><br>
 						<p>Alimentação</p>
 					</a>
 				</li>
 				<li>
-					<a href="../lotes.html">
-						<i class="fas fa-car"></i><br>
-						<p>Produtividade</p>
+					<a href="../insumos.php">
+						<i class="fas fa-bacon"></i><br>
+						<p>Insumos</p>
 					</a>
 				</li>
 				<li>
-					<a href="../estatisticas.html">
+					<a href="../alimentacao.php">
+						<i class="fas fa-utensils"></i><br>
+						<p>Propriedades</p>
+					</a>
+				</li>
+				<li>
+					<a href="../alimentacao.php">
+						<i class="fas fa-utensils"></i><br>
+						<p>Trabalhador</p>
+					</a>
+				</li>
+				<li>
+					<a href="../lotes.php">
+						<i class="fas fa-car"></i><br>
+						<p>Lotes</p>
+					</a>
+				</li>
+				<li>
+					<a href="../estatisticas.php">
 						<i class="fas fa-chart-pie"></i><br>
 						<p>Estatísticas</p>
 					</a>
-				</li>					
+				</li>				
 			</ul>
 		</nav>
-		
 	</aside>
+
 	<main>
-		<h2>Modificar usuários</h2><br>
-		<div>			
-			<form action="../sincronizar.html">
-				<label>Usuário</label>
-				<input type="text" name="login"><br>
-				<label>Nova senha</label>
-				<input type="text" name="senha"><br>
-				<label>Repetir nova senha</label>
-				<input type="text" name="rsenha"><br><br>
-				<button>Cadastrar</button><br><br>
-			</form>
-        </div>
-        <form>
+        <form><br>
 		<label>Pesquisar: <input type="text" name="search" size=50></label>
 			<button>OK</button>
 			<a href="#">Filtros</a>
-            <button>Salvar</button>
+            <button>Salvar</button><br><br>
             <fieldset>
                 <legend>Pesquisar por</legend>
                     <label>
@@ -265,7 +266,19 @@
                     }
                 ?>
 			  
-			</table>
+			</table><br>
+			<fieldset>
+				<legend>Modificar usuários</legend>
+					<form action="cadastrar.php">
+						<label>Usuário</label>
+						<input type="text" name="login"><br>
+						<label>Senha</label>
+						<input type="text" name="senha"><br>
+						<label>Permissão</label>
+						<input type="text" name="permissao"><br>
+						<button>Cadastrar</button><br>
+					</form>
+			</fieldset>
 	</main>
 </body>
 <!-- <script src="https://kit.fontawesome.com/a076d05399.js"></script> -->

@@ -3,70 +3,103 @@
 <?php require "./includes/head.php" ?>
 <body>
 <?php require "./includes/header.php" ?>
-<?php require "./includes/aside.php" ?>	
-	<main>
-		<div style="overflow-x:auto;">
+<?php require "./includes/aside.php" ?>		
+	<main class="access">
+		<form>
 			<h3>Alimentação</h3><br>
 			<label>Pesquisar: <input type="text" name="search" size=50></label>
 			<button>OK</button>
-			<a href="#" onclick="toggleHidden()">Filtros</a>
+			<a href="#" onclick="toggleHidden()">Mais opções</a>
 			<br><br>
-			<fieldset id="hiddenId" hidden>
-						<legend class="access">Pesquisar por</legend>
-						<label>
-                        <input type="radio" name="searchtype" value="cod">Código
-						</label>
-						<label>
-							<input type="radio" name="searchtype" value="nome" checked>Nome
-						</label>
-						<label>
-							<input type="radio" name="searchtype" value="func">Função
-						</label>
-						<label>
-							<input type="radio" name="searchtype" value="peso">Peso(em gramas)
-						</label>
-						<label>
-							<input type="radio" name="searchtype" value="prodtor">Produtor
-						</label>
-						<label>
-							<input type="radio" name="searchtype" value="dtaval">Validade estimada
-						</label>
-						<label>
-							<input type="radio" name="searchtype" value="retesp">Retorno esperado (R$)
-						</label>
-						
-					</fieldset>
+
+			<fieldset class="teste" hidden>
+
+				<legend class="access">Pesquisar por</legend>
+				<label>
+				<input type="radio" name="searchtype" value="codal">Código
+				</label>
+				<label>
+					<input type="radio" name="searchtype" value="nomeali" checked>Nome
+				</label>
+				<label>
+					<input type="radio" name="searchtype" value="tipo">Tipo
+				</label>
+				<label>
+					<input type="radio" name="searchtype" value="peso">Peso
+				</label>
+				<label>
+					<input type="radio" name="searchtype" value="dtaval">Data de Validade
+				</label>
+				<label>
+					<input type="radio" name="searchtype" value="produtora">Produtora
+				</label>
+				<label>
+					<input type="radio" name="searchtype" value="retesper">Retorno esperado
+				</label>
+			</fieldset>
+			</form>
 			<br><br>
-			<table style="width:100%">
+			<table class="access" style="width:100%">
 			  <tr>
 			    <th>Código</th>
 			    <th>Nome</th> 
-			    <th>Função</th>
-			    <th>Peso (em gramas)</th>
-			    <th>Produtor</th>
-			    <th>Data de validade estimada</th>
-			    <th>Retorno esperado (em R$)</th>
+			    <th>Tipo</th>
+				<th>Peso</th>
+				<th>Data de Validade</th>
+				<th>Produtora</th>
+				<th>Retorno esperado</th>
 			  </tr>
-			  <tr>
-			    <td>0002</td>
-			    <td>Sementes</td> 
-			    <td>Fermentação</td>
-			    <td>5000g</td>
-			   	<td>Arcor</td>
-			   	<td>20/09/2022</td>
-			   	<td>50</td>
-			  </tr>
-			  <tr>
-			    <td>0032</td>
-			    <td>Trigo</td> 
-			    <td>Fermentação</td>
-			    <td>3500g</td>
-			   	<td>Orquidea</td>
-			   	<td>24/02/2021</td>
-			   	<td>54</td>
-			  </tr>
+			  <tr style="width:100%">
+			  	<form action="inserir.php">
+					<td><input type="number" name="codal" required></td>
+					<td><input type="text" name="nomeali" required></td> 
+					<td><input type="text" name="tipo" required></td>
+					<td><input type="number" name="peso" required></td>
+					<td><input type="date" name="dtaval" required></td>
+					<td><input type="text" name="produtora" required></td>
+					<td><input type="number" name="retesper" required></td>
+					<td><button>Inserir</button></td>
+				</form>
+			</tr>
+				<?php
+
+				include "./classes/Alimento.php";
+				$al = new Alimento();
+
+				if (!isset($_GET['search']) || $_GET['search'] == NULL) $data = $al->queryAll();
+					else if(isset($_GET['searchtype'])) $data = $al->queryOne($_GET['searchtype'],$_GET['search']);
+					if (isset($data) && $data != NULL) {
+						foreach($data as $d){
+							?>
+								<form action='remover.php'>
+									<tr>
+										<td><?=$d['codal']?></td>
+										<td><?=$d['nomeali']?></td> 
+										<td><?=$d['tipo']?></td>
+										<td><?=$d['peso']?></td>
+										<td><?=$d['dtaval']?></td>
+										<td><?=$d['produtora']?></td>
+										<td><?=$d['retesper']?></td>
+										<td><a class="teste" href="remover.php?codal=<?=$d['codal']?>" hidden>Remover</a></td>
+									</tr>
+								</form>
+							<?php
+							}
+					}
+				?>
 			</table>
-		</div>
+
 	</main>
 </body>
-<?php require "./includes/footer.php" ?>
+<script src="./js/grabber.js"></script>
+<script src="./js/main.js"></script>
+<?php 
+if (isset($_SESSION['audio'])) {
+	if ($_SESSION['audio'] == 1) {
+		echo '<script type="text/javascript">',
+		'grabber()',
+		'</script>';
+	}
+}?>
+<!-- <script src="https://kit.fontawesome.com/a076d05399.js"></script> -->
+</html>

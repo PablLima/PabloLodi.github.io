@@ -2,12 +2,12 @@
 	if (isset($_GET['coda'])) {
 			include "./classes/Animal.php";
 			$a = new Animal();
-			$a->removeAnimal($_GET['coda']);
-			header("Location: animais.php?insercao=1");
+			$a->remove($_GET['coda']);
+			header("Location: animais.php?remocao=1");
+	} else if (isset($_GET['codal'])) {
+		include "./classes/Alimento.php";
+		$al = new Alimento();
+		$al->remove($_GET['codal']);
+		header("Location: alimentacao.php?remocao=1");
 	}
-	header("Location: animais.php?insercao=0");
-	#header("Location: animais.php?insercao=0");
-	#header("Location: animais.php?insercao=0");
-	#header("Location: animais.php?insercao=0");
-	#header("Location: animais.php?insercao=0");
 ?>

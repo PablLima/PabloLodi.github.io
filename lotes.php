@@ -1,75 +1,88 @@
- <!-- Renomear Proutividade para Lotes de leite/algo q se encaixe-->
-
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <?php require "./includes/head.php" ?>
 <body>
 <?php require "./includes/header.php" ?>
-<?php require "./includes/aside.php" ?>	
-	<main>
-	<div class="access" style="overflow-x:auto;">
-			<h3>Produtividade</h3><br>
-			<label>Pesquisar: <input type="text" name="searchInput" size=50></label>
+<?php require "./includes/aside.php" ?>		
+	<main class="access">
+		<form>
+			<h3>Animais</h3><br>
+			<label>Pesquisar: <input type="text" name="search" size=50></label>
 			<button>OK</button>
-			<a href="#">Filtros</a>
+			<a href="#" onclick="toggleHidden()">Mais opções</a>
 			<br><br>
-			<fieldset>
-						<legend>Pesquisar por</legend>
-						<label>
-							<input type="checkbox" id="addb" name="addborda" value="5" onchange="">Quantidade de Litros
-						</label>
-						<label>
-							<input type="checkbox" id="addb" name="addborda" value="5" onchange="">Proporções dos nutrientes
-						</label>
-						<label>
-							<input type="checkbox" id="addb" name="addborda" value="5" onchange="">Valor recebido por litros
-						</label>
-						<label>
-							<input type="checkbox" id="addb" name="addborda" value="5" onchange="">Possíveis observações
-						</label>
-					</fieldset>
-					<br>
-					<button>Salvar</button>
+
+			<fieldset class="teste" hidden>
+
+				<legend class="access">Pesquisar por</legend>
+				<label>
+				<input type="radio" name="searchtype" value="coda">Código
+				</label>
+				<label>
+					<input type="radio" name="searchtype" value="tipo" checked>Tipo
+				</label>
+				<label>
+					<input type="radio" name="searchtype" value="astatus">Status
+				</label>
+				<label>
+					<input type="radio" name="searchtype" value="dtanasc">Data de Nascimento
+				</label>
+				
+			</fieldset>
+			</form>
 			<br><br>
-			<table style="width:100%">
+			<table class="access" style="width:100%">
 			  <tr>
-			    <th>Quantidade de Litros</th>
-			    <th>Proporções dos nutrientes</th> 
-			    <th>Valor recebido por litro</th>
-			    <th>Possíveis observações</th>
+			    <th>Código</th>
+			    <th>Tipo</th> 
+			    <th>Status</th>
+			    <th>Data de Nascimento</th>
 			  </tr>
-			  <tr>
-			    <td>122</td>
-			    <td>12/5/6</td> 
-			    <td>R$ 2</td>
-			   	<td>Alta qualidade</td>
-			  </tr>
-			  <tr>
-			    <td>512</td>
-			    <td>12/5/6</td> 
-			    <td>R$ 1</td>
-			   	<td></td>
-			  </tr>
-			  <tr>
-			    <td>55</td>
-			    <td>12/5/6</td> 
-			    <td>R$ 0.50</td>
-			   	<td>Qualidade aceitável</td>
-			  </tr>
-			  
+			  <tr style="width:100%">
+			  	<form action="inserir.php">
+					<td><input type="number" name="coda" required></td>
+					<td><input type="text" name="tipo" required></td> 
+					<td><input type="text" name="astatus" required></td>
+					<td><input type="date" name="dtanasc" required></td>
+					<td><button>Inserir</button></td>
+				</form>
+			</tr>
+				<?php
+
+				include "./classes/Animal.php";
+				$a = new Animal();
+
+				if (!isset($_GET['search']) || $_GET['search'] == NULL) $data = $a->queryAll();
+					else if(isset($_GET['searchtype'])) $data = $a->queryOne($_GET['searchtype'],$_GET['search']);
+					if (isset($data) && $data != NULL) {
+						foreach($data as $d){
+							?>
+								<form action='remover.php'>
+									<tr>
+										<td><?=$d['coda']?></td>
+										<td><?=$d['tipo']?></td> 
+										<td><?=$d['astatus']?></td>
+										<td><?=$d['dtanasc']?></td>
+										<td><a class="teste" href="remover.php?coda=<?=$d['coda']?>" hidden>Remover</a></td>
+									</tr>
+								</form>
+							<?php
+							}
+					}
+				?>
 			</table>
-		</div>
+
 	</main>
 </body>
 <script src="./js/grabber.js"></script>
+<script src="./js/main.js"></script>
 <?php 
 if (isset($_SESSION['audio'])) {
-	if ($_SESSION['audio'] == true) {
+	if ($_SESSION['audio'] == 1) {
 		echo '<script type="text/javascript">',
 		'grabber()',
 		'</script>';
 	}
-}
-?>
+}?>
 <!-- <script src="https://kit.fontawesome.com/a076d05399.js"></script> -->
 </html>

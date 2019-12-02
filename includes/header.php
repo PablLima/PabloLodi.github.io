@@ -1,6 +1,6 @@
 <header class="access">
-    <h2>Milk Manager 2019</h2>
+    <h2><a href="index.php">Milk Manager 2019</a></h2>
     <a href="adm/cadastro.php">Usuários</a>
     <a href="preferencias.php">Preferências</a>
-    <a href="login.php">Fazer logoff</a>
+    <a href="logoff.php">Fazer logoff</a>
 </header>

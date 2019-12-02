@@ -20,13 +20,13 @@
                 </a>
             </li>
             <li>
-                <a href="alimentacao.php">
+                <a href="propriedades.php">
                     <i class="fas fa-utensils"></i><br>
                     <p>Propriedades</p>
                 </a>
             </li>
             <li>
-                <a href="alimentacao.php">
+                <a href="trabalhador.php">
                     <i class="fas fa-utensils"></i><br>
                     <p>Trabalhador</p>
                 </a>

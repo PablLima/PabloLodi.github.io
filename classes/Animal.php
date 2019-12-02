@@ -25,13 +25,13 @@ class Animal
         return $result;
     }
 
-    function removeAnimal($coda) {
+    function remove($coda) {
         $sql = "delete from animal where coda=$coda";
         $result = $this->conexao->query($sql);
         return $result;
     }
 
-    function insertAnimal($coda,$tipo,$status,$dtanasc) {
+    function insert($coda,$tipo,$status,$dtanasc) {
         $sql = "insert into animal values($coda,'$tipo','$status','$dtanasc')";
         $result = $this->conexao->query($sql);
         return $result;

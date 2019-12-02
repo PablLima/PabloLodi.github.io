@@ -24,6 +24,18 @@ class Alimento
         $result = $this->conexao->select($sql);
         return $result;
     }
+
+    function remove($codal) {
+        $sql = "delete from alimento where codal=$codal";
+        $result = $this->conexao->query($sql);
+        return $result;
+    }
+
+    function insert($codal,$nomeali,$tipo,$peso,$dtaval,$produtora,$retesper) {
+        $sql = "insert into alimento values($codal,'$nomeali','$tipo',$peso,'$dtaval','$produtora',$retesper)";
+        $result = $this->conexao->query($sql);
+        return $result;
+    }
     
     // $cobra-criada = new Animal;
     // $lista = $cobra-criada->query('select * from animal')

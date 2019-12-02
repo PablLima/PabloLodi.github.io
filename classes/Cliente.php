@@ -15,7 +15,7 @@ class Cliente
     }
 
     function queryOne($type,$search) {
-        $sql = "select * from usuario where {$type}='$search'";
+        $sql = "select * from usuario where $type='$search'";
         $result = $this->conexao->select($sql);
         return $result;
     }
@@ -23,6 +23,12 @@ class Cliente
     function queryAll() {
         $sql = "select * from usuario";
         $result = $this->conexao->select($sql);
+        return $result;
+    }
+
+    function insertUser($login,$senha,$funcao) {
+        $sql = "insert into usuario valus($login,$senha,$funcao)";
+        $result = $this->conexao->query($sql);
         return $result;
     }
 

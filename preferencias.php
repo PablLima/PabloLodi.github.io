@@ -3,10 +3,15 @@
 <head>
     <?php
         session_start();
-        if (isset($_GET['audio'])) { 
-			$_SESSION['audio'] = 1;
+        if (isset($_GET['audio']) && $_GET['audio'] == 1) { 
+			$_SESSION['audio'] = true;
 		} else {
 			unset($_SESSION['audio']);
+		}
+        if (isset($_GET['cores']) && $_GET['cores'] == 1) { 
+			$_SESSION['cores'] = true;
+		} else {
+			unset($_SESSION['cores']);
 		}
 	?>
 	<title>2milk</title>
@@ -149,48 +154,61 @@
 </head>
 <body>
 	<header>
-		<h2>Milk Manager 2019</h2>
-		<a href="adm/cadastro.html">Usuários</a>
-		<a href="preferencias.html">Preferências</a>
-		<a href="login.html">Fazer logoff</a>
+		<h2><a href="index.php">Milk Manager 2019</a></h2>
+		<a href="adm/cadastro.php">Usuários</a>
+		<a href="preferencias.php">Preferências</a>
+		<a href="logoff.php">Fazer logoff</a>
 	</header>
-	<aside>
+
+	<aside class="access">
 		<nav>
 			<ul>
 				<li>
-					<a href="animais.html">
+					<a href="animais.php">
 						<i class="fas fa-paw"></i><br>
 						<p>Animais</p>
 					</a>
 				</li>
 				<li>
-					<a href="insumos.html">
-						<i class="fas fa-bacon"></i><br>
-						<p>Insumos</p>
-					</a>
-				</li>
-				<li>
-					<a href="alimentacao.html">
+					<a href="alimentacao.php">
 						<i class="fas fa-utensils"></i><br>
 						<p>Alimentação</p>
 					</a>
 				</li>
 				<li>
-					<a href="lotes.html">
-						<i class="fas fa-car"></i><br>
-						<p>Produtividade</p>
+					<a href="insumos.php">
+						<i class="fas fa-bacon"></i><br>
+						<p>Insumos</p>
 					</a>
 				</li>
 				<li>
-					<a href="estatisticas.html">
+					<a href="alimentacao.php">
+						<i class="fas fa-utensils"></i><br>
+						<p>Propriedades</p>
+					</a>
+				</li>
+				<li>
+					<a href="alimentacao.php">
+						<i class="fas fa-utensils"></i><br>
+						<p>Trabalhador</p>
+					</a>
+				</li>
+				<li>
+					<a href="lotes.php">
+						<i class="fas fa-car"></i><br>
+						<p>Lotes</p>
+					</a>
+				</li>
+				<li>
+					<a href="estatisticas.php">
 						<i class="fas fa-chart-pie"></i><br>
 						<p>Estatísticas</p>
 					</a>
-				</li>					
+				</li>				
 			</ul>
 		</nav>
-		
 	</aside>
+
 	<main>
 			<div class="access" style="overflow-x:auto;">
 			<h3>Preferências</h3><br>
@@ -221,11 +239,10 @@
 <script src="./js/grabber.js"></script>
 <?php 
 if (isset($_SESSION['audio'])) {
-	if ($_SESSION['audio'] == true) {
 		echo '<script type="text/javascript">',
 		'grabber()',
 		'</script>';
-	}
-}?>
+}
+?>
 <!-- <script src="https://kit.fontawesome.com/a076d05399.js"></script> -->
 </html>

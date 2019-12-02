@@ -6,9 +6,12 @@
     <?php
         session_start();
         if (isset($_GET['audio'])) { 
-			$_SESSION['audio'] = 1;
-		} else {
-			unset($_SESSION['audio']);
+			$_SESSION['audio'] = true;
+			echo "teste";
+		}
+		if (isset($_GET['color'])) {
+			$_SESSION['color'] = true;
+			echo 'Teste';
 		}
 	?>
 </head>

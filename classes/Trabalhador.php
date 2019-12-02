@@ -1,6 +1,6 @@
 <?php
 require_once ("BD.php");
-class Insumo
+class Animal
 {
     private $conexao;
 
@@ -14,14 +14,50 @@ class Insumo
     }
 
     function queryOne($type,$search) {
-        $sql = "select * from trabalhador where {$type}='$search'";
+        $sql = "select * from animal where {$type}='$search'";
         $result = $this->conexao->select($sql);
         return $result;
     }
 
     function queryAll() {
-        $sql = "select * from trabalhador";
+        $sql = "select * from animal";
         $result = $this->conexao->select($sql);
+        return $result;
+    }
+
+    function remove($coda) {
+        $sql = "delete from animal where coda=$coda";
+        $result = $this->conexao->query($sql);
+        return $result;
+    }
+
+    function insert($coda,$tipo,$status,$dtanasc) {
+        $sql = "insert into animal values($coda,'$tipo','$status','$dtanasc')";
+        $result = $this->conexao->query($sql);
+        return $result;
+    }
+
+    function remove($coda) {
+        $sql = "delete from animal where coda=$coda";
+        $result = $this->conexao->query($sql);
+        return $result;
+    }
+
+    function insert($coda,$tipo,$status,$dtanasc) {
+        $sql = "insert into animal values($coda,'$tipo','$status','$dtanasc')";
+        $result = $this->conexao->query($sql);
+        return $result;
+    }
+
+    function remove($coda) {
+        $sql = "delete from animal where coda=$coda";
+        $result = $this->conexao->query($sql);
+        return $result;
+    }
+
+    function insert($coda,$tipo,$status,$dtanasc) {
+        $sql = "insert into animal values($coda,'$tipo','$status','$dtanasc')";
+        $result = $this->conexao->query($sql);
         return $result;
     }
     
