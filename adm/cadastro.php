@@ -4,6 +4,7 @@
 	<title>2milk</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="../css/all.css">
+	<script src="../js/ajax.js"></script>
 	<style type="text/css">
 		* {
 			font-family: Arial;
@@ -164,14 +165,11 @@
 	?>
 	<header>
 		<h2>Milk Manager 2019</h2>
-		<a href="../adm/cadastro.php">Usuários</a>
-		<a href="../preferencias.php">Preferências</a>
-		<a href="../logoff.php">Fazer logoff</a>
+		<a href="#" onclick="ajaxReload('../adm/cadastro.php')">Usuários</a>
+		<a href="#" onclick="ajaxReload('../preferencias.php')">Preferências</a>
+		<a href="#" onclick="ajaxReload('../logoff.php')">Fazer logoff</a>
 	</header>
-<<<<<<< HEAD
 	
-=======
->>>>>>> 1d07798b77138f923ccb3c84291d71cb99c34808
 	<aside class="access">
 		<nav>
 			<ul>

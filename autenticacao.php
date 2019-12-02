@@ -14,24 +14,26 @@ else{
 	#echo ' - ';
 	#echo print_r ($pass);
 	#echo print_r ($dados);
-	if($pass != $dados[0]['senha']){
-		header("Location: login.php?erro=2");
-	}
-	else{
-		session_start();
-		$_SESSION['nome'] = $dados[0]['login']; 
-		$_SESSION['funcao'] = $dados[0]['funcao'];
-		$expira = time() + 60 * 60 * 24 * 7;
-		setcookie("nome", $dados[0]['login'], $expira);
-		setcookie("funcao", $dados[0]['funcao'], $expira);
-		// if(isset($_POST['lembrar'])){
-		// 	$expira = time() + 60 * 60 * 24 * 7;
-		// 	setcookie("nome", $dados[0]['nome'], $expira);
-		// 	setcookie("id", $dados[0]['id'], $expira);
-		// 	setcookie("endereco", $dados[0]['endereco'] .", ".$dados[0]['bairro'], $expira);
-		// }
+	#var_dump($pass);
+	var_dump($dados);
+	// if($pass != $dados[0]['senha']){
+	// 	#header("Location: login.php?erro=2");
+	// }
+	// else{
+	// 	session_start();
+	// 	$_SESSION['nome'] = $dados[0]['login']; 
+	// 	$_SESSION['funcao'] = $dados[0]['funcao'];
+	// 	$expira = time() + 60 * 60 * 24 * 7;
+	// 	setcookie("nome", $dados[0]['login'], $expira);
+	// 	setcookie("funcao", $dados[0]['funcao'], $expira);
+	// 	// if(isset($_POST['lembrar'])){
+	// 	// 	$expira = time() + 60 * 60 * 24 * 7;
+	// 	// 	setcookie("nome", $dados[0]['nome'], $expira);
+	// 	// 	setcookie("id", $dados[0]['id'], $expira);
+	// 	// 	setcookie("endereco", $dados[0]['endereco'] .", ".$dados[0]['bairro'], $expira);
+	// 	// }
 	
-		header("Location: index.php");
-	}
+	// 	header("Location: index.php");
+	// }
 }
 ?>

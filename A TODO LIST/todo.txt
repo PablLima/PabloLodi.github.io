@@ -1,0 +1,2 @@
+- Implementar requisitos restantes
+- Corrigir responsividade

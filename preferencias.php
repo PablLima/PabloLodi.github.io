@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<script src="../js/ajax.js"></script>
     <?php
 		session_start();
 		if(!isset($_SESSION['nome'])) header("Location: login.php");

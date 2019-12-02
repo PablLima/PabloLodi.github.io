@@ -20,18 +20,6 @@
                 </a>
             </li>
             <li>
-                <a href="#" onclick="ajaxReload('propriedades.php')">
-                    <i class="fas fa-utensils"></i><br>
-                    <p>Propriedades</p>
-                </a>
-            </li>
-            <li>
-                <a href="#" onclick="ajaxReload('trabalhador.php')">
-                    <i class="fas fa-utensils"></i><br>
-                    <p>Trabalhador</p>
-                </a>
-            </li>
-            <li>
                 <a href="#" onclick="ajaxReload('lotes.php')">
                     <i class="fas fa-car"></i><br>
                     <p>Lotes</p>

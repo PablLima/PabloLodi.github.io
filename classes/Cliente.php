@@ -9,7 +9,7 @@ class Cliente
     }    
     
     function autenticar($usuario) {
-        $sql = 'SELECT * FROM usuario';
+        $sql = 'SELECT * FROM usuario where login=$usuario';
         $result = $this->conexao->select($sql);
         return $result;
     }
@@ -27,7 +27,7 @@ class Cliente
     }
 
     function insertUser($login,$senha,$funcao) {
-        $sql = "insert into usuario valus($login,$senha,$funcao)";
+        $sql = "insert into usuario values($login,$senha,$funcao)";
         $result = $this->conexao->query($sql);
         return $result;
     }
