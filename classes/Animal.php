@@ -28,12 +28,11 @@ class Animal
     function removeAnimal($coda) {
         $sql = "delete from animal where coda=$coda";
         $result = $this->conexao->query($sql);
-        header("Location: animal.php?delete=1");
         return $result;
     }
 
     function insertAnimal($coda,$tipo,$status,$dtanasc) {
-        $sql = "insert from animal values($coda,$tipo,$status,$dtanasc)";
+        $sql = "insert into animal values($coda,'$tipo','$status','$dtanasc')";
         $result = $this->conexao->query($sql);
         return $result;
     }

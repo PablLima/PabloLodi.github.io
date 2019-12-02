@@ -38,12 +38,12 @@
 			    <th>Status</th>
 			    <th>Data de Nascimento</th>
 			  </tr>
-			  <tr class="teste" style="width:100%">
+			  <tr style="width:100%">
 			  	<form action="inserir.php">
-					<td><input type="text" name="coda"></td>
-					<td><input type="text" name="tipo"></td> 
-					<td><input type="text" name="astatus"></td>
-					<td><input type="text" name="dtanasc"></td>
+					<td><input type="number" name="coda" required></td>
+					<td><input type="text" name="tipo" required></td> 
+					<td><input type="text" name="astatus" required></td>
+					<td><input type="date" name="dtanasc" required></td>
 					<td><button>Inserir</button></td>
 				</form>
 			</tr>
@@ -57,13 +57,15 @@
 					if (isset($data) && $data != NULL) {
 						foreach($data as $d){
 							?>
-							<tr>
-								<td><?=$d['coda']?></td>
-								<td><?=$d['tipo']?></td> 
-								<td><?=$d['astatus']?></td>
-								<td><?=$d['dtanasc']?></td>
-								<td><a href="#" onclick="<?=$a->removeAnimal($d['coda'])?>)">Remover</td>
-							</tr>
+								<form action='remover.php'>
+									<tr>
+										<td><?=$d['coda']?></td>
+										<td><?=$d['tipo']?></td> 
+										<td><?=$d['astatus']?></td>
+										<td><?=$d['dtanasc']?></td>
+										<td><a class="teste" href="remover.php?coda=<?=$d['coda']?>" hidden>Remover</a></td>
+									</tr>
+								</form>
 							<?php
 							}
 					}
