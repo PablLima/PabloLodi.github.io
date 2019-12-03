@@ -71,22 +71,16 @@
 			<h2>Preferências</h2><br>
 			<br>
 			<form class="access">
-				<fieldset>
-					<legend>Geral</legend>
-					<label>
-						<input type="checkbox" id="alert" name="alerta" value="1" onchange=""> Receber alertas
-					</label>
-				</fieldset>
 				<br>
 				<fieldset>
-					<legend>Notificações</legend>
+					<legend>Acessibilidade</legend>
 					<label>
 						<input type="checkbox" id="sound" name="audio" value="1"> Navegação por áudio
 					</label><br>
 					<label>
-						<input type="checkbox" id="color" name="cores" value="1" onchange=""> Correção de cores para daltonicos
+						<input type="checkbox" id="color" name="cores" value="1" onchange=""> Correção de cores para daltônicos
 					</label>
-				</fieldset>
+				</fieldset><br>
 				<button>Salvar</button>
 			</form>
 			<br><br>

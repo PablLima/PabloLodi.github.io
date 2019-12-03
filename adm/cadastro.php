@@ -58,7 +58,7 @@
 
 	<main>
 		<form>
-		<h2>Cadastro</h2><br>
+		<h2>Usuários</h2><br>
 		<label>Pesquisar: <input type="text" name="search" size=50></label>
 			<button>OK</button>
 			<a href="#">Filtros</a>

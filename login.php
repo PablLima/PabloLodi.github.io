@@ -32,7 +32,7 @@
 
 				<form class="login100-form validate-form" action="autenticacao.php" method="post">
 					<span class="login100-form-title">
-						Login
+						2milk Manager 2019
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "Digite um usuário válido">
