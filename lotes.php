@@ -16,13 +16,13 @@
 
 				<legend class="access">Pesquisar por</legend>
 				<label>
-					<input type="date" name="searchtype" value="datae">Data de entrega
+					<input type="radio" name="searchtype" value="datae">Data de entrega
 				</label>
 				<label>
-					<input type="number" name="searchtype" value="qtde">Quantidade
+					<input type="radio" name="searchtype" value="qtde">Quantidade
 				</label>
 				<label>
-					<input type="date" name="searchtype" value="pinicial">Início do período
+					<input type="radio" name="searchtype" value="pinicial">Período
 				</label>
 				
 			</fieldset>
@@ -30,10 +30,10 @@
 			<br><br>
 			<table class="access" style="width:100%">
 			  <tr>
-			    <th>Código</th>
-			    <th>Tipo</th> 
-			    <th>Status</th>
-			    <th>Data de Nascimento</th>
+			    <th>Data de entrega</th>
+			    <th>Quantidade</th> 
+			    <th>Período</th>
+	
 			  </tr>
 			  <tr style="width:100%">
 			  	<form action="inserir.php">
