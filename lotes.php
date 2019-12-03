@@ -22,7 +22,7 @@
 					<input type="radio" name="searchtype" value="qtde">Quantidade
 				</label>
 				<label>
-					<input type="radio" name="searchtype" value="pinicial">Período
+					<input type="radio" name="searchtype" value="periodo">Período
 				</label>
 				
 			</fieldset>
@@ -39,7 +39,7 @@
 			  	<form action="inserir.php">
 					<td><input type="date" name="datae" required></td>
 					<td><input type="number" name="qtde" required></td>
-					<td><input type="date" name="pinicial" required></td> 
+					<td><input type="date" name="periodo" required></td> 
 					<td><button>Inserir</button></td>
 				</form>
 			</tr>

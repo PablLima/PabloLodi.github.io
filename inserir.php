@@ -15,5 +15,11 @@
 		$i->insert($_GET['codin'],$_GET['dtaqui'],$_GET['inome'],$_GET['finali'],$_GET['obs']);
 		header("Location: insumos.php?insercao=1");
 	}
+	else if (isset($_GET['datae']){
+		include "./classes/Lotes.php";
+		$lo = new Lote();
+		$lo->insert($_GET['datae'],$_GET['qtde'],$_GET['periodo']));
+		header("Location:lotes.php?insercao=1");
+	}
 	#header("Location: animais.php?insercao=0");
 ?>

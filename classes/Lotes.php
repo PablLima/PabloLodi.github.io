@@ -31,8 +31,8 @@ class Lote
         return $result;
     }
 
-    function insert($datae,$qtde,$pinicial) {
-        $sql = "insert into lote values('$datae','$qtde','$pinicial')";
+    function insert($datae,$qtde,$periodo) {
+        $sql = "insert into lote values('$datae','$qtde','$periodo')";
         $result = $this->conexao->query($sql);
         return $result;
     }

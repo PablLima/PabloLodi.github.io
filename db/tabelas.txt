@@ -45,16 +45,15 @@ create table avaliacao (
     gord integer not null,
     bacte integer not null,
     celsom integer not null,
-    pinicial date not null,
-    pfinal date not null,
-    constraint pk_avaliacao primary key (pinicial)
+    periodo date not null,
+    constraint pk_avaliacao primary key (periodo)
 );
 
 drop table lote cascade;
 create table lote (
     datae date not null,
     qtde integer not null,
-    pinicial date not null,
+    periodo date not null,
     constraint pk_lote primary key (datae),
     constraint fk_avaliacao_lote foreign key (pinicial) references avaliacao (pinicial)
 );
