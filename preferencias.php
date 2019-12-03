@@ -77,9 +77,6 @@
 					<label>
 						<input type="checkbox" id="sound" name="audio" value="1"> Navegação por áudio
 					</label><br>
-					<label>
-						<input type="checkbox" id="color" name="cores" value="1" onchange=""> Correção de cores para daltônicos
-					</label>
 				</fieldset><br>
 				<button>Salvar</button>
 			</form>

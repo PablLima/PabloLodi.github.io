@@ -14,13 +14,24 @@
 		$i = new Insumo();
 		$i->insert($_GET['codin'],$_GET['dtaqui'],$_GET['inome'],$_GET['finali'],$_GET['obs']);
 		header("Location: insumos.php?insercao=1");
-	}
-	else if (isset($_GET['datae'])){
-		include "./classes/Lotes.php";
+	}	else if (isset($_GET['datae'])){
+		include "./classes/Lote.php";
 		$lo = new Lote();
 		$lo->insert($_GET['datae'],$_GET['qtde'],$_GET['periodo']);
 		#var_dump($lo);
 		header("Location:lotes.php?insercao=1");
+	} else if (isset($_GET['codp'])){
+		include "./classes/Propriedade.php";
+		$p = new Propriedade();
+		$p->insert($_GET['codp'],$_GET['nomed'],$_GET['locali']);
+		#var_dump($lo);
+		header("Location:propriedades.php?insercao=1");
+	} else if (isset($_GET['periodo'])){
+		include "./classes/Avaliacao.php";
+		$av = new Avaliacao();
+		$av->insert($_GET['prote'],$_GET['gord'],$_GET['bacte'],$_GET['celsom'],$_GET['periodo']);
+		#var_dump($lo);
+		header("Location:avaliacao.php?insercao=1");
 	}
 	#header("Location: animais.php?insercao=0");
 ?>

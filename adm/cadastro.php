@@ -61,9 +61,8 @@
 		<h2>Usuários</h2><br>
 		<label>Pesquisar: <input type="text" name="search" size=50></label>
 			<button>OK</button>
-			<a href="#">Filtros</a>
-            <button>Salvar</button><br><br>
-            <fieldset>
+			<a href="#" onclick="toggleHidden()">Filtros</a>
+            <fieldset class="teste" hidden>
                 <legend>Pesquisar por</legend>
                     <label>
                         <input type="radio" name="searchtype" value="login">Login
@@ -110,19 +109,8 @@
                 ?>
 			  
 			</table><br>
-			<fieldset>
-				<legend>Modificar usuários</legend>
-					<form action="cadastrar.php">
-						<label>Usuário</label><br>
-						<input type="text" name="login"><br>
-						<label>Senha</label><br>
-						<input type="text" name="senha"><br>
-						<label>Permissão</label><br>
-						<input type="text" name="permissao"><br><br>
-						<button>Cadastrar</button><br>
-					</form>
-			</fieldset>
 	</main>
 </body>
+<script src="../js/first.js"></script>
 <!-- <script src="https://kit.fontawesome.com/a076d05399.js"></script> -->
 </html>

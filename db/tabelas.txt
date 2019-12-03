@@ -10,6 +10,15 @@ create table usuario(
     funcao varchar(50)
 );
 
+
+drop table propriedade cascade;
+create table propriedade (
+    codp integer not null,
+    nomed varchar(30) not null,
+    locali varchar (90) not null,
+    constraint pk_propriedade primary key (codp));
+
+
 drop table animal cascade;
 create table animal (
     coda integer not null,
@@ -17,17 +26,8 @@ create table animal (
     astatus varchar(150) not null,
     dtanasc date not null,
     codp integer not null,
-    constraint pk_animal primary key (coda)
-    constraint fk_propriedade_animal foreign key (codp) references propriedade(codp)
-);
-
-drop table propriedade cascade;
-create table propriedade (
-    codp integer not null,
-    nomed varchar(30) not null,
-    locali varchar (90) not null,
-    constraint pk_propriedade primary key (codp),
-);
+    constraint pk_animal primary key (coda),
+    constraint fk_propriedade_animal foreign key (codp) references propriedade(codp));
 
 drop table trabalhador cascade;
 create table trabalhador (
@@ -36,8 +36,7 @@ create table trabalhador (
     funcao varchar (20),
     codp integer not null,
     constraint pk_trabalhador primary key (codt),
-    constraint fk_propriedade_trabalhador foreign key (codp) references propriedade (codp)
-);
+    constraint fk_propriedade_trabalhador foreign key (codp) references propriedade (codp));
 
 drop table avaliacao cascade;
 create table avaliacao (
@@ -46,8 +45,7 @@ create table avaliacao (
     bacte integer not null,
     celsom integer not null,
     periodo date not null,
-    constraint pk_avaliacao primary key (periodo)
-);
+    constraint pk_avaliacao primary key (periodo));
 
 drop table lote cascade;
 create table lote (
@@ -99,5 +97,6 @@ create table depende (
     constraint fk_insumo_depende foreign key (dtaaqui) references insumo (dtaqui)
 );
 
-insert into usuario values('admin','12345','sinef@gmail.com','admin');
-insert into animal values(0,'Producao','Saudavel','01/01/2018');
+insert into propriedade values(1,'Barracão','SC');
+insert into usuario values('admin',md5('12345'),'sinef@gmail.com','admin');
+insert into animal values(0,'Producao','Saudavel','01/01/2018',1);

@@ -1,6 +1,6 @@
 <?php
 require_once ("BD.php");
-class Lote
+class Avaliacao
 {
     private $conexao;
 
@@ -14,25 +14,25 @@ class Lote
     }
 
     function queryOne($type,$search) {
-        $sql = "select * from lote where {$type}='$search'";
+        $sql = "select * from avaliacao where {$type}='$search'";
         $result = $this->conexao->select($sql);
         return $result;
     }
 
     function queryAll() {
-        $sql = "select * from lote";
+        $sql = "select * from avaliacao";
         $result = $this->conexao->select($sql);
         return $result;
     }
 
-    function remove($datae) {
-        $sql = "delete from lote where datae=$datae";
+    function remove($periodo) {
+        $sql = "delete from avaliacao where periodo='$periodo'";
         $result = $this->conexao->query($sql);
         return $result;
     }
 
-    function insert($datae,$qtde,$periodo) {
-        $sql = "insert into lote values('$datae','$qtde','$periodo')";
+    function insert($prote,$gord,$bacte,$celsom,$periodo) {
+        $sql = "insert into avaliacao values($prote,$gord,$bacte,$celsom,'$periodo')";
         $result = $this->conexao->query($sql);
         return $result;
     }

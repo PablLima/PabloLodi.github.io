@@ -45,7 +45,7 @@
 			</tr>
 				<?php
 
-				include "./classes/Lotes.php";
+				include "./classes/Lote.php";
 				$a = new Lote();
 
 				if (!isset($_GET['search']) || $_GET['search'] == NULL) $data = $a->queryAll();
@@ -57,6 +57,7 @@
 									<tr>
 										<td><?=$d['datae']?></td>
 										<td><?=$d['qtde']?></td> 
+										<td><?=$d['periodo']?></td> 
 										<td><a class="teste" href="remover.php?datae=<?=$d['datae']?>" hidden>Remover</a></td>
 									</tr>
 								</form>

@@ -26,6 +26,18 @@
 					</a>
 				</li>
 				<li>
+					<a href="propriedades.php">
+						<i class="fas fa-chart-pie"></i><br>
+						<p>Propriedades</p>
+					</a>
+				</li>
+				<li>
+					<a href="avaliacao.php">
+						<i class="fas fa-chart-pie"></i><br>
+						<p>Avaliação</p>
+					</a>
+				</li>		
+				<li>
 					<a href="estatisticas.php">
 						<i class="fas fa-chart-pie"></i><br>
 						<p>Estatísticas</p>

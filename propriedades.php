@@ -44,7 +44,7 @@
 			</tr>
 				<?php
 
-				include "./classes/Propriedades.php";
+				include "./classes/Propriedade.php";
 				$a = new Propriedade();
 
 				if (!isset($_GET['search']) || $_GET['search'] == NULL) $data = $a->queryAll();
@@ -56,6 +56,7 @@
 									<tr>
 										<td><?=$d['codp']?></td>
 										<td><?=$d['nomed']?></td> 
+										<td><?=$d['locali']?></td> 
 										<td><a class="teste" href="remover.php?codp=<?=$d['codp']?>" hidden>Remover</a></td>
 									</tr>
 								</form>
