@@ -36,7 +36,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
 		dataPoints: [
 			<?php
 				foreach($data as $d) {
-					echo "{y: {$d['count']}, label: {$d['tipo']}},";
+					echo "{y: {$d['count']}, label: '{$d['tipo']}'},";
 				}
 			?>
 		]

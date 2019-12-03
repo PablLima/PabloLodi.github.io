@@ -6,7 +6,7 @@
 <?php require "./includes/aside.php" ?>		
 	<main class="access">
 		<form>
-			<h3>Propriedades</h3><br>
+			<h2>Propriedades</h2><br>
 			<label>Pesquisar: <input type="text" name="search" size=50></label>
 			<button>OK</button>
 			<a href="#" onclick="toggleHidden()">Mais opções</a>
