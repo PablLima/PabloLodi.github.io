@@ -16,16 +16,16 @@
 
 				<legend class="access">Pesquisar por</legend>
 				<label>
-				<input type="number" name="searchtype" value="codin">Código
+				<input type="radio" name="searchtype" value="codin">Código
 				</label>
 				<label>
-					<input type="date" name="searchtype" value="dtaqui" checked>Data de aquisição
+					<input type="radio" name="searchtype" value="dtaqui" checked>Data de aquisição
 				</label>
 				<label>
-					<input type="text" name="searchtype" value="inome">Nome
+					<input type="radio" name="searchtype" value="inome">Nome
 				</label>
 				<label>
-					<input type="text" name="searchtype" value="finali">Finalidade
+					<input type="radio" name="searchtype" value="finali">Finalidade
 				</label>
 				
 			</fieldset>
