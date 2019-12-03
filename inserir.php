@@ -19,8 +19,8 @@
 		include "./classes/Lotes.php";
 		$lo = new Lote();
 		$lo->insert($_GET['datae'],$_GET['qtde'],$_GET['periodo']));
-		var_dump($lo);
-		#header("Location:lotes.php?insercao=1");
+		#var_dump($lo);
+		header("Location:lotes.php?insercao=1");
 	}
 	#header("Location: animais.php?insercao=0");
 ?>
