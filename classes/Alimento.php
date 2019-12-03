@@ -31,8 +31,8 @@ class Alimento
         return $result;
     }
 
-    function insert($codal,$nomeali,$tipo,$peso,$dtaval,$produtora,$retesper) {
-        $sql = "insert into alimento values($codal,'$nomeali','$tipo',$peso,'$dtaval','$produtora',$retesper)";
+    function insert($codal,$nomeali,$tipo,$peso,$dtaval,$produtora,$retesper,$datau) {
+        $sql = "insert into alimento values($codal,'$nomeali','$tipo',$peso,'$dtaval','$produtora',$retesper,'$datau')";
         $result = $this->conexao->query($sql);
         return $result;
     }
