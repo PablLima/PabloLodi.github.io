@@ -74,11 +74,11 @@ create table alimento (
 drop table insumo cascade;
 create table insumo (
     codin integer not null,
-    dtaaqui date not null,
+    dtaqui date not null,
     inome varchar (20) not null,
     finali varchar (20) not null,
     obs varchar(100),
-    constraint pk_cod_insumo primary key (dtaaqui)
+    constraint pk_cod_insumo primary key (dtaqui)
 );
 
 drop table produz cascade;

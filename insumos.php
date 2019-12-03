@@ -51,7 +51,7 @@
 			</tr>
 				<?php
 
-				include "./classes/Insumos.php";
+				include "./classes/Insumo.php";
 				$a = new Insumo();
 
 				if (!isset($_GET['search']) || $_GET['search'] == NULL) $data = $a->queryAll();

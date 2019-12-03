@@ -32,7 +32,7 @@ class Insumo
     }
 
     function insert($codin,$dtaaqui,$inome,$finali,$obs) {
-        $sql = "insert into insumo values('$codin','$dtaaqui','$inome','$finali','$obs')";
+        $sql = "insert into insumo values($codin,'$dtaaqui','$inome','$finali','$obs')";
         $result = $this->conexao->query($sql);
         return $result;
     }

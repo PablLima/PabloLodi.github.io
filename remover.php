@@ -9,5 +9,10 @@
 		$al = new Alimento();
 		$al->remove($_GET['codal']);
 		header("Location: alimentacao.php?remocao=1");
+	} else if (isset($_GET['codin'])) {
+		include "./classes/Insumo.php";
+		$i = new Insumo();
+		$i->remove($_GET['codin']);
+		header("Location: insumos.php?remocao=1");
 	}
 ?>

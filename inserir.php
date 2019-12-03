@@ -9,6 +9,11 @@
 		$al = new Alimento();
 		$al->insert($_GET['codal'],$_GET['nomeali'],$_GET['tipo'],$_GET['peso'],$_GET['dtaval'],$_GET['produtora'],$_GET['retesper'] );
 		header("Location: alimentacao.php?insercao=1");
+	} else if (isset($_GET['codin'])) {
+		include "./classes/Insumo.php";
+		$i = new Insumo();
+		$i->insert($_GET['codin'],$_GET['dtaqui'],$_GET['inome'],$_GET['finali'],$_GET['obs']);
+		header("Location: insumos.php?insercao=1");
 	}
 	#header("Location: animais.php?insercao=0");
 ?>

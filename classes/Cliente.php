@@ -9,7 +9,7 @@ class Cliente
     }    
     
     function autenticar($usuario) {
-        $sql = 'SELECT * FROM usuario where login=$usuario';
+        $sql = "SELECT * FROM usuario where login='$usuario'";
         $result = $this->conexao->select($sql);
         return $result;
     }

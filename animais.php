@@ -4,8 +4,8 @@
 <body>
 <?php require "./includes/header.php" ?>
 <?php require "./includes/aside.php" ?>		
-	<main class="access">
-		<form>
+	<main>
+		<form class="access">
 			<h3>Animais</h3><br>
 			<label>Pesquisar: <input type="text" name="search" size=50></label>
 			<button>OK</button>
@@ -16,7 +16,7 @@
 
 				<legend class="access">Pesquisar por</legend>
 				<label>
-				<input type="radio" name="searchtype" value="coda">Código
+					<input type="radio" name="searchtype" value="coda">Código
 				</label>
 				<label>
 					<input type="radio" name="searchtype" value="tipo" checked>Tipo
@@ -32,13 +32,13 @@
 			</form>
 			<br><br>
 			<table class="access" style="width:100%">
-			  <tr>
+			  <tr class="access">
 			    <th>Código</th>
 			    <th>Tipo</th> 
 			    <th>Status</th>
 			    <th>Data de Nascimento</th>
 			  </tr>
-			  <tr style="width:100%">
+			  <tr class="access" style="width:100%">
 			  	<form action="inserir.php">
 					<td><input type="number" name="coda" required></td>
 					<td><input type="text" name="tipo" required></td> 
@@ -58,7 +58,7 @@
 						foreach($data as $d){
 							?>
 								<form action='remover.php'>
-									<tr>
+									<tr class="access">
 										<td><?=$d['coda']?></td>
 										<td><?=$d['tipo']?></td> 
 										<td><?=$d['astatus']?></td>
