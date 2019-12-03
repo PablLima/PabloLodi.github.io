@@ -7,7 +7,7 @@
 	} else if (isset($_GET['codal'])) {
 		include "./classes/Alimento.php";
 		$al = new Alimento();
-		$al->insert($_GET['codal'],$_GET['nomeali'],$_GET['tipo'],$_GET['peso'],$_GET['dtaval'],$_GET['produtora'],$_GET['retesper'] );
+		$al->insert($_GET['codal'],$_GET['nomeali'],$_GET['tipo'],$_GET['peso'],$_GET['dtaval'],$_GET['produtora'],$_GET['retesper'],$_GET['datau']);
 		header("Location: alimentacao.php?insercao=1");
 	} else if (isset($_GET['codin'])) {
 		include "./classes/Insumo.php";

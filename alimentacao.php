@@ -82,6 +82,7 @@
 										<td><?=$d['dtaval']?></td>
 										<td><?=$d['produtora']?></td>
 										<td><?=$d['retesper']?></td>
+										<td><?=$d['datau']?></td>
 										<td><a class="teste" href="remover.php?codal=<?=$d['codal']?>" hidden>Remover</a></td>
 									</tr>
 								</form>

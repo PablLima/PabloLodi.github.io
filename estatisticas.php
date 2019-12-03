@@ -1,39 +1,45 @@
+<!DOCTYPE html>
+<html>
+<?php require "./includes/head.php" ?>
+<body>
+<?php require "./includes/header.php" ?>
+<?php require "./includes/aside.php" ?>		
 	<main>
-		<div>
-			<h3>Estatísticas</h3><br>
-			<h7>Porcentagem de vacas</h7><br><br>
-			<canvas id="myChart" width="400" height="100"></canvas>
-		</div>
+    <div id="chartContainer" style="height: 370px; width: 100%;"></div>
 	</main>
 </body>
 <script>
-var ctx = document.getElementById('myChart').getContext('2d');
-var myChart = new Chart(ctx, {
-    type: 'doughnut',
-    data: {
-        labels: ['Totalmente pasto', 'Híbrida', 'Totalmente grãos'],
-        datasets: [{
-            label: 'Quantidade # de vacas',
-            data: [12, 19, 3],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
-        }]
-    }
+window.onload = function() {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	theme: "light2", // "light1", "light2", "dark1", "dark2"
+	exportEnabled: true,
+	animationEnabled: true,
+	title: {
+		text: "Desktop Browser Market Share in 2016"
+	},
+	data: [{
+		type: "pie",
+		startAngle: 25,
+		toolTipContent: "<b>{label}</b>: {y}%",
+		showInLegend: "true",
+		legendText: "{label}",
+		indexLabelFontSize: 16,
+		indexLabel: "{label} - {y}%",
+		dataPoints: [
+			{ y: 51.08, label: "Chrome" },
+			{ y: 27.34, label: "Internet Explorer" },
+			{ y: 10.62, label: "Firefox" },
+			{ y: 5.02, label: "Microsoft Edge" },
+			{ y: 4.07, label: "Safari" },
+			{ y: 1.22, label: "Opera" },
+			{ y: 0.44, label: "Others" }
+		]
+	}]
 });
+chart.render();
+
+}
 </script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<?php require "./includes/footer.php" ?>	

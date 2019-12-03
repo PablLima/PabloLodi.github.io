@@ -211,7 +211,7 @@
 		</nav>
 	</aside>
 
-	<main>
+	<main >
 			<div class="access" style="overflow-x:auto;">
 			<h3>Preferências</h3><br>
 			<br>

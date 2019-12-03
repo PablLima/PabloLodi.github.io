@@ -97,7 +97,7 @@ create table depende (
     dtaaqui date not null,
     constraint fk_animal_depende foreign key (coda) references animal (coda),
     constraint fk_alimentos_depende foreign key (codal) references alimento (codal),
-    constraint fk_insumo_depende foreign key (dtaaqui) references insumo (dtaaqui)
+    constraint fk_insumo_depende foreign key (dtaaqui) references insumo (dtaqui)
 );
 
 insert into usuario values('admin','12345','sinef@gmail.com','admin');
