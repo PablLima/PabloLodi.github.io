@@ -55,7 +55,7 @@ create table lote (
     qtde integer not null,
     periodo date not null,
     constraint pk_lote primary key (datae),
-    constraint fk_avaliacao_lote foreign key (pinicial) references avaliacao (pinicial)
+    constraint fk_avaliacao_lote foreign key (periodo) references avaliacao (periodo)
 );
 
 drop table alimento cascade;
