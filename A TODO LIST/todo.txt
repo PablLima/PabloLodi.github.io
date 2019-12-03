@@ -1,3 +1,5 @@
 - Implementar requisitos restantes
 - Corrigir responsividade
 - Arrumar estatística (Implementar dados)
+- Colocar botão registrar avaliação, ver avaliação retornará as propriedades da tabela avaliação caso existir, 
+  se não retornará não informado

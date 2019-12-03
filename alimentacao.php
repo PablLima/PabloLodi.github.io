@@ -5,8 +5,8 @@
 <?php require "./includes/header.php" ?>
 <?php require "./includes/aside.php" ?>		
 	<main class="access">
-		<form>
-			<h3>Alimentação</h3><br>
+		<form class="access">
+			<h2>Alimentação</h2><br>
 			<label>Pesquisar: <input type="text" name="search" size=50></label>
 			<button>OK</button>
 			<a href="#" onclick="toggleHidden()">Mais opções</a>
@@ -37,10 +37,10 @@
 					<input type="radio" name="searchtype" value="retesper">Retorno esperado
 				</label>
 			</fieldset>
-			</form>
+			</form class="access">
 			<br><br>
 			<table class="access" style="width:100%">
-			  <tr>
+			  <tr class="access">
 			    <th>Código</th>
 			    <th>Nome</th> 
 			    <th>Tipo</th>
@@ -50,7 +50,7 @@
 				<th>Retorno esperado</th>
 				<th>Utilizado em</th>
 			  </tr>
-			  <tr style="width:100%">
+			  <tr class="access" style="width:100%">
 			  	<form action="inserir.php">
 					<td><input type="number" name="codal" required></td>
 					<td><input type="text" name="nomeali" required></td> 
@@ -74,7 +74,7 @@
 						foreach($data as $d){
 							?>
 								<form action='remover.php'>
-									<tr>
+									<tr class="access">
 										<td><?=$d['codal']?></td>
 										<td><?=$d['nomeali']?></td> 
 										<td><?=$d['tipo']?></td>
@@ -94,15 +94,4 @@
 
 	</main>
 </body>
-<script src="./js/grabber.js"></script>
-<script src="./js/main.js"></script>
-<?php 
-if (isset($_SESSION['audio'])) {
-	if ($_SESSION['audio'] == 1) {
-		echo '<script type="text/javascript">',
-		'grabber()',
-		'</script>';
-	}
-}?>
-<!-- <script src="https://kit.fontawesome.com/a076d05399.js"></script> -->
-</html>
+<?php require "./includes/footer.php" ?>	

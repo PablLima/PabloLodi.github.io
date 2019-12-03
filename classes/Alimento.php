@@ -36,6 +36,12 @@ class Alimento
         $result = $this->conexao->query($sql);
         return $result;
     }
+
+    function graph() {
+        $sql = "select tipo,count(*) from alimento group by 1";
+        $result = $this->conexao->select($sql);
+        return $result;
+    }
     
     // $cobra-criada = new Animal;
     // $lista = $cobra-criada->query('select * from animal')

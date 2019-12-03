@@ -5,9 +5,17 @@
 <?php require "./includes/header.php" ?>
 <?php require "./includes/aside.php" ?>		
 	<main>
-    <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+		<?php 
+
+			include "./classes/Alimento.php";
+			$al = new Alimento();
+			$data = $al->graph();
+			
+		?>
+    	<div id="chartContainer" style="height: 370px; width: 100%;"></div>
 	</main>
 </body>
+
 <script>
 window.onload = function() {
 
@@ -16,30 +24,30 @@ var chart = new CanvasJS.Chart("chartContainer", {
 	exportEnabled: true,
 	animationEnabled: true,
 	title: {
-		text: "Desktop Browser Market Share in 2016"
+		text: "Distribuição Alimentícia"
 	},
 	data: [{
-		type: "pie",
-		startAngle: 25,
-		toolTipContent: "<b>{label}</b>: {y}%",
-		showInLegend: "true",
-		legendText: "{label}",
-		indexLabelFontSize: 16,
-		indexLabel: "{label} - {y}%",
+		type: "doughnut",
+		startAngle: 60,
+		//innerRadius: 60,
+		indexLabelFontSize: 17,
+		indexLabel: "{label} - #percent%",
+		toolTipContent: "<b>{label}:</b> {y} (#percent%)",
 		dataPoints: [
-			{ y: 51.08, label: "Chrome" },
-			{ y: 27.34, label: "Internet Explorer" },
-			{ y: 10.62, label: "Firefox" },
-			{ y: 5.02, label: "Microsoft Edge" },
-			{ y: 4.07, label: "Safari" },
-			{ y: 1.22, label: "Opera" },
-			{ y: 0.44, label: "Others" }
+			<?php
+				foreach($data as $d) {
+					echo "{y: {$d['count']}, label: {$d['tipo']}},";
+				}
+			?>
 		]
 	}]
 });
+
+console.log(chart);
 chart.render();
 
 }
 </script>
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
 <?php require "./includes/footer.php" ?>	
