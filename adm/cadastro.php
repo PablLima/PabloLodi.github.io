@@ -13,7 +13,7 @@
 		if(!isset($_SESSION['nome'])) header("Location: ../login.php");
 	?>
 	<header>
-		<h2>Milk Manager 2019</h2>
+		<h2><a href="../index.php">2milk Manager 2019</a></h2>
 		<a href="../adm/cadastro.php" onclick="ajaxReload('')">Usuários</a>
 		<a href="../preferencias.php" onclick="ajaxReload('')">Preferências</a>
 		<a href="../logoff.php" onclick="ajaxReload('')">Fazer logoff</a>
@@ -44,6 +44,13 @@
 					<a href="../lotes.php">
 						<i class="fas fa-car"></i><br>
 						<p>Lotes</p>
+					</a>
+				</li>
+				</li>
+				<li>
+					<a href="propriedades.php">
+						<i class="fas fa-chart-pie"></i><br>
+						<p>Propriedades</p>
 					</a>
 				</li>
 				<li>

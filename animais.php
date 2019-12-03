@@ -36,7 +36,8 @@
 			    <th>Código</th>
 			    <th>Tipo</th> 
 			    <th>Status</th>
-			    <th>Data de Nascimento</th>
+				<th>Data de Nascimento</th>
+				<th>Código da Propriedade</th>
 			  </tr>
 			  <tr class="access" style="width:100%">
 			  	<form action="inserir.php">
@@ -44,6 +45,7 @@
 					<td><input type="text" name="tipo" required></td> 
 					<td><input type="text" name="astatus" required></td>
 					<td><input type="date" name="dtanasc" required></td>
+					<td><input type="number" name="codp" required></td>
 					<td><button>Inserir</button></td>
 				</form>
 			</tr>
@@ -63,6 +65,7 @@
 										<td><?=$d['tipo']?></td> 
 										<td><?=$d['astatus']?></td>
 										<td><?=$d['dtanasc']?></td>
+										<td><?=$d['codp']?></td>
 										<td><a class="teste" href="remover.php?coda=<?=$d['coda']?>" hidden>Remover</a></td>
 									</tr>
 								</form>

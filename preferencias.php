@@ -23,7 +23,7 @@
 </head>
 <body>
 	<header>
-		<h2><a href="index.php">Milk Manager 2019</a></h2>
+		<h2><a href="index.php">2milk Manager 2019</a></h2>
 		<a href="adm/cadastro.php">Usuários</a>
 		<a href="preferencias.php">Preferências</a>
 		<a href="logoff.php">Fazer logoff</a>
@@ -54,6 +54,13 @@
 					<a href="lotes.php">
 						<i class="fas fa-car"></i><br>
 						<p>Lotes</p>
+					</a>
+				</li>
+				</li>
+				<li>
+					<a href="propriedades.php">
+						<i class="fas fa-chart-pie"></i><br>
+						<p>Propriedades</p>
 					</a>
 				</li>
 				<li>

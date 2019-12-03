@@ -31,8 +31,8 @@ class Animal
         return $result;
     }
 
-    function insert($coda,$tipo,$status,$dtanasc) {
-        $sql = "insert into animal values($coda,'$tipo','$status','$dtanasc')";
+    function insert($coda,$tipo,$status,$dtanasc,$codp) {
+        $sql = "insert into animal values($coda,'$tipo','$status','$dtanasc',$codp)";
         $result = $this->conexao->query($sql);
         return $result;
     }

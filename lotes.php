@@ -37,9 +37,9 @@
 			  </tr>
 			  <tr style="width:100%">
 			  	<form action="inserir.php">
-					<td><input type="date" name="datae" required></td>
+					<td><input type="number" name="datae" required></td>
 					<td><input type="number" name="qtde" required></td>
-					<td><input type="date" name="periodo" required></td> 
+					<td><input type="number" name="periodo" required></td> 
 					<td><button>Inserir</button></td>
 				</form>
 			</tr>

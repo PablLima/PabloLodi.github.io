@@ -18,6 +18,7 @@
 		include "./classes/Propriedade.php";
 		$p = new Propriedade();
 		$p->remove($_GET['codp']);
+		#var_dump($p);
 		header("Location: propriedades.php?remocao=1");
 	} else if (isset($_GET['datae'])) {
 		include "./classes/Lote.php";

@@ -22,7 +22,7 @@ create table propriedade (
 drop table animal cascade;
 create table animal (
     coda integer not null,
-    tipo varchar (25) not null,
+    tipo varchar (50) not null,
     astatus varchar(150) not null,
     dtanasc date not null,
     codp integer not null,
@@ -40,7 +40,7 @@ create table trabalhador (
 
 drop table lote cascade;
 create table lote (
-    datae date not null,
+    datae integer not null,
     qtde integer not null,
     periodo integer not null,
     constraint pk_lote primary key (datae)

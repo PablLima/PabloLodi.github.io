@@ -25,14 +25,14 @@ class Avaliacao
         return $result;
     }
 
-    function remove($periodo) {
-        $sql = "delete from avaliacao where periodo='$periodo'";
+    function remove($datae) {
+        $sql = "delete from avaliacao where periodo='$datae'";
         $result = $this->conexao->query($sql);
         return $result;
     }
 
-    function insert($prote,$gord,$bacte,$celsom,$periodo) {
-        $sql = "insert into avaliacao values($prote,$gord,$bacte,$celsom,'$periodo')";
+    function insert($prote,$gord,$bacte,$celsom,$datae) {
+        $sql = "insert into avaliacao values($prote,$gord,$bacte,$celsom,'$datae')";
         $result = $this->conexao->query($sql);
         return $result;
     }
