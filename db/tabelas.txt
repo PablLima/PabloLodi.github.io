@@ -38,24 +38,23 @@ create table trabalhador (
     constraint pk_trabalhador primary key (codt),
     constraint fk_propriedade_trabalhador foreign key (codp) references propriedade (codp));
 
-drop table avaliacao cascade;
-create table avaliacao (
-    prote integer not null,
-    gord integer not null,
-    bacte integer not null,
-    celsom integer not null,
-    periodo date not null,
-    constraint pk_avaliacao primary key (periodo));
-
 drop table lote cascade;
 create table lote (
     datae date not null,
     qtde integer not null,
-    periodo date not null,
-    constraint pk_lote primary key (datae),
-    constraint fk_avaliacao_lote foreign key (periodo) references avaliacao (periodo)
+    periodo integer not null,
+    constraint pk_lote primary key (datae)
 );
 
+drop table avaliacao cascade;
+create table avaliacao (
+    prot integer not null,
+    gord integer not null,
+    celsom integer not null,
+    bact integer not null,
+    datae integer not null,
+    constraint fk_lote_avaliacao foreign key (datae) references lote(datae)
+);
 drop table alimento cascade;
 create table alimento (
     codal integer not null,
